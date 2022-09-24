@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/889dacf975.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
         body{
   background-color: rgb(93, 101, 100);
@@ -22,6 +24,7 @@ header{
   width: 100%;
   background: var(--bg-color);
   box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+
 }
 .bx-shopping-bag{
   display: flex;
@@ -53,25 +56,59 @@ header{
 .cart.active{
   right: 0;
 }
+
+
 .cart-img{
     align-items: center;
   width: 470px;
   height: 250px;
 }
 .fa-cart-shopping{
-    font-size: 28px;
+    box-shadow: 1px 10px 10px black;
+    color: black;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
 }
+
 .fa-cart-shopping:hover{
     color: red;
 }
+.fa-xmark{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(67, 64, 64);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
 .fa-xmark:hover{
     color: red;
+    transform: scale(1.1);
 }
 .fa-trash{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(115, 112, 112);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
     font-size: 20px;
 }
 .fa-trash:hover{
     color: red;
+    transform: scale(1.1);
 }
 .cart-product-title{
     text-align: center;
@@ -90,6 +127,8 @@ header{
   cursor: pointer;
 }
 .cart-title{
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
     font-size: 30px;
     text-align: center;
 }
@@ -280,7 +319,7 @@ section a:hover{
   /*Image de product de filter */
 .filterDiv {
     float: left;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     width: 250px;
     height: 340px;
     display: none;
@@ -605,6 +644,7 @@ ul li a{
     justify-content: center;
 }
 .header_footer .column .column4 .list_column4 h4{
+    margin-top: 10px;
     color: rgb(252, 248, 248);
     font-size: 13px;
 }
@@ -612,10 +652,12 @@ ul li a{
     color: orange;
 }
 .header_footer .column .column3 .list_column3 h3{
+    margin-top: 10px;
     color: white;
     font-size: 16px;
 }
 .column h2{
+
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgb(248, 247, 246);
     color: white;
@@ -711,6 +753,10 @@ ul li a{
         .cmail{
             font-size: 18px;
         }
+       .end_main_footer{
+        width: 94%;
+        font-size: 12px;
+       }
  }
 /* button pour aller en haut du page */
 #myBtn {
@@ -731,16 +777,17 @@ ul li a{
   #myBtn:hover {
     background-color: #555; 
   }
+ 
 </style>
     <title>index</title>
 </head>
 <body>
-    <!--Header-->
+<!--Header-->
     <header>
         <a href="index.html"><img class="logo" src="images/img/logo_gmsshopmali.png" alt=""></a>
          <!--Barre de navigation-->
         <nav>
-            <a class="mail" href="mailto:"><i class="fa-regular fa-at" title="mail"></i></a>
+            <a class="mail" href="mailto:gmsshopmali@gmail.com"><i class="fa-regular fa-at" title="mail"></i></a>
             <a class="facebook" href="https://www."><i class="fa-brands fa-facebook-f" title="facebook"></i></a>
             <a class="whatsapp" href="https://wa.me/+223"><i class="fa-brands fa-whatsapp" title="whatsapp"></i></a>
             <a class="instagram" href="https://www."><i class="fa-brands fa-instagram" title="instagram"></i></a>
@@ -749,40 +796,27 @@ ul li a{
         <!--Cart-Icon-->
     <i class='bx bx-shopping-bag' id="cart-icon"><i class="fa-solid fa-cart-shopping" title="panier"></i></i>
     </header>
-     <!--Cart-->
+<!--Cart-->
     <div class="cart">
     <div class="cart-title">Votre panier</div>
     <!--content-->
-  <div class="cart-content">
+  <div class="cart-content" id="content-panier">
 
 </div>
+<!--Button envoiyer-->
 <div class="main_send">
-    <input type="submit" id="submit" value="Commander sur whatsapp" onclick="gotowhatsapp()" class="cwhatsapp">
-    <input type="submit" id="submit" value="Commander sur Facebook" onclick="" class="cfacebook">
-    <input type="submit" id="submit" value="Commander sur Instagram" onclick="" class="cinstagram">
-    <input type="submit" id="submit" value="Commander sur Tiktok" onclick="" class="ctiktok">
-    <input type="submit" id="submit" value="Commander sur Mail" onclick="" class="cmail">
+    <input type="submit" value="Commander sur whatsapp" onclick="buyButtonClickedWh()" class="cwhatsapp">
+    <input type="submit" value="Commander sur Facebook" onclick="buyButtonClickedFb()" class="cfacebook">
+    <input type="submit" value="Commander sur Instagram" onclick="buyButtonClickedIns()" class="cinstagram">
+    <input type="submit" value="Commander sur Tiktok" onclick="buyButtonClickedTik()" class="ctiktok">
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script>
-    var image = document.getElementById("cimg").src;
-    var title = document.getElementById("ctitle").innerText;
-    var prix = document.getElementById("cprice").innerText;
 
-                    function gotowhatsapp(){
-    var url = "https://wa.me/223?text=" 
-    + "PICTURE :" + image + ";"
-    + "TITLE :" + title + ";"
-    + "PRIX :" + prix + ";"
-
-    window.open(url, '_blank').focus();
-}
 </script>
+
 <!--Cart close-->
-<i class="bx bx-x" id="close-cart"><i class="fa-sharp fa-solid fa-xmark"></i><span class="colse">ferme</span></i>
+<i class="bx bx-x" id="close-cart"><i class="fa-sharp fa-solid fa-xmark"></i></i>
 </div>
-    <!-- Control buttons de produit de filter-->
+<!-- Control buttons de produit de filter-->
 <div id="myBtnContainer">
       <button class="btn active" onclick="topFunction();filterSelection('all')">Voir Tout</button>
       <button class="btn" onclick="topFunction();filterSelection('mobiles')">Mobiles & Accessoires</button>
@@ -794,12 +828,12 @@ ul li a{
       <button class="btn" onclick="topFunction();filterSelection('femme')">Mode Femme</button>
     </div>
     <h1>Voir nos produits</h1>
-    <!--Barre de Recherche-->
+<!--Barre de Recherche-->
     <form>
         <input type="text" name="" id="search-item" placeholder="Rechercher vos produits ici ......"
         onkeyup="search()" autocomplete="off">
     </form>
-    <!--JS de Recherche-->
+<!--JS de Recherche-->
 <script>
         const search = () => {
     const searchbox = document.getElementById("search-item").value.toUpperCase();
@@ -820,12 +854,12 @@ ul li a{
     }
 }
 </script>
-    <!--Les de produits filter-->
+<!--Les de produits-->
     <section class="shop-container">
         <div class="container" id="product-list">
         <!--content-->
         <div class="shop-content" >
-
+           
            <!--Box 1-->
            <div class="filterDiv mobiles">
             <div class="product-box">
@@ -915,7 +949,7 @@ ul li a{
         </div>
     </div>
     </section>
- <!--Les story de Services-->
+<!--Les story de Services-->
  <aside>
     <section class="story">
       <img src='images/img/livraison-a-domicile-974.jpg' title="Livraision" alt=''/>
@@ -923,13 +957,16 @@ ul li a{
       <img src='images/img/service-client.jpg' title="Conversation" alt=''/>
     </section>
   </aside>
-<!--JS send-->
-<script src="send.js"></script>
+<!--JS SEND-->
+<script>
+    
+</script>
 <!--JS DE PANIER-->
 <script>
 let cartIcon = document.querySelector('#cart-icon');
 let cart = document.querySelector('.cart');
 let closeCart = document.querySelector('#close-cart');
+
 //Open Cart
 cartIcon.onclick = () =>{
     cart.classList.add("active");
@@ -967,20 +1004,82 @@ function ready(){
         button.addEventListener("click", addCartClicked);
     }
     //buy Button Work
-    document.getElementsByClassName('cwhatsapp')[0].addEventListener('click', buyButtonClicked);
-    document.getElementsByClassName('cfacebook')[0].addEventListener('click', buyButtonClicked);
-    document.getElementsByClassName('cinstagram')[0].addEventListener('click', buyButtonClicked);
-    document.getElementsByClassName('ctiktok')[0].addEventListener('click', buyButtonClicked);
-    document.getElementsByClassName('cmail')[0].addEventListener('click', buyButtonClicked);
+    document.getElementsByClassName('cwhatsapp')[0].addEventListener('click', buyButtonClickedWh);
+    document.getElementsByClassName('cfacebook')[0].addEventListener('click', buyButtonClickedFb);
+    document.getElementsByClassName('cinstagram')[0].addEventListener('click', buyButtonClickedIns);
+    document.getElementsByClassName('ctiktok')[0].addEventListener('click', buyButtonClickedTik);
 }
-//buy Button
-function  buyButtonClicked(){
+//buy Button Whatsapp
+function  buyButtonClickedWh(){
+    var productImageSend = document.getElementById("cimg").src;
+    var productTitreSend = document.getElementById("ctitle").innerText;
+    var productPrixSend = document.getElementById("cprice").innerText;
+
+    var url = "https://wa.me/22371502426?text=" 
+    + "Picture :" + productImageSend + ";---"
+    + "Titre :" + productTitreSend + ";---"
+    + "Prix :" + productPrixSend
+    window.open(url, '_blank').focus();
     alert('Vous avez commandé')
     var cartContent = document.getElementsByClassName('cart-content')[0];
     while (cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild);
     }
-    updatetotal();
+     updatetotal();
+}
+//buy Button Facebook
+function  buyButtonClickedFb(){
+    var productImageSend = document.getElementById("cimg").src;
+    var productTitreSend = document.getElementById("ctitle").innerText;
+    var productPrixSend = document.getElementById("cprice").innerText;
+
+    var url = "https://www.?text=" 
+    + "Picture :" + productImageSend + ";---"
+    + "Titre :" + productTitreSend + ";---"
+    + "Prix :" + productPrixSend
+    window.open(url, '_blank').focus();
+    alert('Vous avez commandé')
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    while (cartContent.hasChildNodes()){
+        cartContent.removeChild(cartContent.firstChild);
+    }
+     updatetotal();
+}
+//buy Button Instagram
+function  buyButtonClickedIns(){
+    var productImageSend = document.getElementById("cimg").src;
+    var productTitreSend = document.getElementById("ctitle").innerText;
+    var productPrixSend = document.getElementById("cprice").innerText;
+
+    var url = "https://www.?text=" 
+    + "Picture :" + productImageSend + ";---"
+    + "Titre :" + productTitreSend + ";---"
+    + "Prix :" + productPrixSend
+    window.open(url, '_blank').focus();
+    alert('Vous avez commandé')
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    while (cartContent.hasChildNodes()){
+        cartContent.removeChild(cartContent.firstChild);
+    }
+     updatetotal();
+}
+//buy Button Tiktok
+function  buyButtonClickedTik(){
+    var productImageSend = document.getElementById("cimg").src;
+    var productTitreSend = document.getElementById("ctitle").innerText;
+    var productPrixSend = document.getElementById("cprice").innerText;
+
+    var url = "https://www.?text=" 
+    + "Picture :" + productImageSend + ";---"
+    + "Titre :" + productTitreSend + ";---"
+    + "Prix :" + productPrixSend
+    window.open(url, '_blank').focus();
+    alert('Vous avez commandé')
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    while (cartContent.hasChildNodes()){
+        cartContent.removeChild(cartContent.firstChild);
+    }
+     updatetotal();
 }
 
 //Reome Items From Cart
@@ -1006,6 +1105,7 @@ function addCartClicked(event){
     var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
     addProductToCart(title, price, productImg);
     updatetotal();
+    
 }
 function addProductToCart(title, price, productImg){
    var cartShopBox = document.createElement("div");
@@ -1018,6 +1118,7 @@ function addProductToCart(title, price, productImg){
         return;
     }
 }
+
 var cartBoxContent =`  
             <img src="${productImg}" alt="" class="cart-img" id="cimg">
             <div class="detail-box">
@@ -1027,10 +1128,12 @@ var cartBoxContent =`
             <!--remove Cart-->
             <i class="fa-solid fa-trash cart-remove"></i>
             `
+      
 cartShopBox.innerHTML = cartBoxContent
 cartItems.append(cartShopBox)
 cartShopBox.getElementsByClassName("cart-remove")[0].addEventListener('click', removeCartItem);
 cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change", quantityChanged);
+var send = cartBoxContent
 
 //Update Total
 function updatetotal(){
@@ -1048,6 +1151,7 @@ function updatetotal(){
         //if price cintain sime cents 
         document.getElementsByClassName("total-price")[0].innerText = total + "FCFA";
     }
+    
 }
 
 
@@ -1102,7 +1206,7 @@ function updatetotal(){
       
     }
 </script>  
-    <!--Button aller haut de la page -->
+<!--Button aller haut de la page -->
 <button onclick="topFunction()" id="myBtn" title="Aller en haut"><i class="fa-solid fa-angles-up"></i></button> 
  <script>
         //Get the button
@@ -1125,7 +1229,7 @@ function updatetotal(){
           document.documentElement.scrollTop = 0;
         }
 </script> 
-    <!--Footer -->
+<!--Footer -->
     <footer class="main_footer"></footer>
     <footer class="header_footer">
         <div class="column">
