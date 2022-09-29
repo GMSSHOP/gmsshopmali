@@ -8,9 +8,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
+    /* Body */
         body{
   background-color: rgb(93, 101, 100);
 }
+/* Parametre Defaut */
 *{
     font-family: initial;
     padding: 0;
@@ -56,8 +58,6 @@ header{
 .cart.active{
   right: 0;
 }
-
-
 .cart-img{
     align-items: center;
   width: 470px;
@@ -74,7 +74,6 @@ header{
     text-align: center;
     align-items: center;
 }
-
 .fa-cart-shopping:hover{
     color: red;
 }
@@ -316,7 +315,7 @@ section a:hover{
     justify-content: space-around;
     flex-wrap: wrap;
 }
-  /*Image de product de filter */
+/*Image de product de filter */
 .filterDiv {
     float: left;
     margin-bottom: 25px;
@@ -408,7 +407,7 @@ section a:hover{
      margin-top: 20px;
      overflow: hidden;
    }
-   /* Style the buttons */
+/* Style the buttons */
    #myBtnContainer{
     background-color: white;
     margin-top: -5px;
@@ -438,8 +437,408 @@ section a:hover{
      background-color: #666;
      color: white;
    }
-/*mode phone */
-@media(max-width:470px){
+/* Mode phone */
+   @media(max-width:428px){
+    header .logo{
+        width: 95%;
+    }
+    nav a{
+        width: 94%;
+    }
+    .story img{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+    .cart {
+
+  width: 250px;
+  position: fixed;
+  top: 100px;
+  right: -250%;
+  height: 500px;
+  padding: 20px;
+  background-color: #ddd;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.3s;
+}
+.cart.active{
+  right: 0;
+}
+.cart-img{
+    align-items: center;
+  width: 94%;
+}
+.cart-product-title{
+    text-align: center;
+    font-size: 24px;
+}
+.colse{
+    font-size: 16px;
+}
+.cart-price{
+    text-align: center;
+    font-size: 22px;
+}
+.cart-title{
+    font-size: 30px;
+    text-align: center;
+}
+.shop-container{
+    display: flex;
+    justify-content: space-around;
+}
+.shop-content{
+    width: 94%;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 0.1px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.product-box{
+    text-align: center;
+    border-radius: 5px;
+    width: 190px;
+    background-color: rgb(180, 176, 176);
+}
+.product-img{
+    align-items: center;
+     width: 190px;
+     height: 150px;
+     border-radius: 5px;
+   }
+   .product-img:hover{
+    transform: none;
+   }
+ .product-title{
+    color: rgb(5, 0, 0);
+     font-size: 16px;
+     text-align: center;
+   }
+   .old-price{
+    font-size: 14px; 
+    text-decoration: line-through;
+ }
+ .price{
+     color: black;
+     font-size: 16px;
+ }
+    .filterDiv{
+        width: 170px;
+        height: 300px;
+        margin-bottom: -12px;
+    }
+    .filter{
+        width: 94%;
+        height: 560px;
+}
+}
+/* Mode phone */
+@media(max-width:375px){
+    header .logo{
+        width: 95%;
+    }
+    nav a{
+        width: 94%;
+    }
+    .story img{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+    .cart {
+
+  width: 250px;
+  position: fixed;
+  top: 100px;
+  right: -250%;
+  height: 500px;
+  padding: 20px;
+  background-color: #ddd;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.3s;
+}
+.cart.active{
+  right: 0;
+}
+.cart-img{
+    align-items: center;
+  width: 94%;
+}
+.cart-product-title{
+    text-align: center;
+    font-size: 24px;
+}
+.colse{
+    font-size: 16px;
+}
+.cart-price{
+    text-align: center;
+    font-size: 22px;
+}
+.cart-title{
+    font-size: 30px;
+    text-align: center;
+}
+.shop-container{
+    display: flex;
+    justify-content: space-around;
+}
+.shop-content{
+    width: 94%;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 0.1px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.product-box{
+    text-align: center;
+    border-radius: 5px;
+    width: 170px;
+    background-color: rgb(180, 176, 176);
+}
+.product-img{
+    align-items: center;
+     width: 170px;
+     height: 150px;
+     border-radius: 5px;
+   }
+   .product-img:hover{
+    transform: none;
+   }
+ .product-title{
+    color: rgb(5, 0, 0);
+     font-size: 16px;
+     text-align: center;
+   }
+   .old-price{
+    font-size: 14px; 
+    text-decoration: line-through;
+ }
+ .price{
+     color: black;
+     font-size: 16px;
+ }
+    .filterDiv{
+        width: 170px;
+        height: 300px;
+        margin-bottom: -12px;
+    }
+    .filter{
+        width: 94%;
+        height: 560px;
+}
+}
+/* Mode phone */
+@media(max-width:384px){
+    header .logo{
+        width: 95%;
+    }
+    nav a{
+        width: 94%;
+    }
+    .story img{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+    .cart {
+
+  width: 250px;
+  position: fixed;
+  top: 100px;
+  right: -250%;
+  height: 500px;
+  padding: 20px;
+  background-color: #ddd;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.3s;
+}
+.cart.active{
+  right: 0;
+}
+.cart-img{
+    align-items: center;
+  width: 94%;
+}
+.cart-product-title{
+    text-align: center;
+    font-size: 24px;
+}
+.colse{
+    font-size: 16px;
+}
+.cart-price{
+    text-align: center;
+    font-size: 22px;
+}
+.cart-title{
+    font-size: 30px;
+    text-align: center;
+}
+.shop-container{
+    display: flex;
+    justify-content: space-around;
+}
+.shop-content{
+    width: 94%;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 0.1px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.product-box{
+    text-align: center;
+    border-radius: 5px;
+    width: 175px;
+    background-color: rgb(180, 176, 176);
+}
+.product-img{
+    align-items: center;
+     width: 175px;
+     height: 150px;
+     border-radius: 5px;
+   }
+   .product-img:hover{
+    transform: none;
+   }
+ .product-title{
+    color: rgb(5, 0, 0);
+     font-size: 16px;
+     text-align: center;
+   }
+   .old-price{
+    font-size: 14px; 
+    text-decoration: line-through;
+ }
+ .price{
+     color: black;
+     font-size: 16px;
+ }
+    .filterDiv{
+        width: 170px;
+        height: 300px;
+        margin-bottom: -12px;
+    }
+    .filter{
+        width: 94%;
+        height: 560px;
+}
+}
+/* Mode phone */
+@media(max-width:390px){
+    header .logo{
+        width: 95%;
+    }
+    nav a{
+        width: 94%;
+    }
+    .story img{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+}
+    .cart {
+
+  width: 250px;
+  position: fixed;
+  top: 100px;
+  right: -250%;
+  height: 500px;
+  padding: 20px;
+  background-color: #ddd;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.3s;
+}
+.cart.active{
+  right: 0;
+}
+.cart-img{
+    align-items: center;
+  width: 94%;
+}
+.cart-product-title{
+    text-align: center;
+    font-size: 24px;
+}
+.colse{
+    font-size: 16px;
+}
+.cart-price{
+    text-align: center;
+    font-size: 22px;
+}
+.cart-title{
+    font-size: 30px;
+    text-align: center;
+}
+.shop-container{
+    display: flex;
+    justify-content: space-around;
+}
+.shop-content{
+    width: 94%;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 0.1px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.product-box{
+    text-align: center;
+    border-radius: 5px;
+    width: 175px;
+    background-color: rgb(180, 176, 176);
+}
+.product-img{
+    align-items: center;
+     width: 175px;
+     height: 150px;
+     border-radius: 5px;
+   }
+   .product-img:hover{
+    transform: none;
+   }
+ .product-title{
+    color: rgb(5, 0, 0);
+     font-size: 16px;
+     text-align: center;
+   }
+   .old-price{
+    font-size: 14px; 
+    text-decoration: line-through;
+ }
+ .price{
+     color: black;
+     font-size: 16px;
+ }
+    .filterDiv{
+        width: 170px;
+        height: 300px;
+        margin-bottom: -12px;
+    }
+    .filter{
+        width: 94%;
+        height: 560px;
+}
+}
+/* mode phone */
+@media(max-width:360px){
     header .logo{
         width: 95%;
     }
@@ -538,8 +937,10 @@ section a:hover{
         height: 560px;
 }
 }
-@media(max-width:300px){
+/* Mode phone */
+@media(max-width:310px){
 .shop-content{
+    margin: auto;
     width: 94%;
     margin-bottom: 20px;
     display: grid;
@@ -550,12 +951,12 @@ section a:hover{
 .product-box{
     text-align: center;
     border-radius: 5px;
-    width: 250px;
+    width: 290px;
     background-color: rgb(180, 176, 176);
 }
 .product-img{
     align-items: center;
-     width: 250px;
+     width: 290px;
      height: 150px;
      border-radius: 5px;
    }
@@ -563,6 +964,38 @@ section a:hover{
     transform: none;
    }
 }
+/* Mode phone */
+@media(max-width:720px){
+            .main_send input{
+            border-radius: 10px;
+            margin: auto;
+            width: 250px;
+            height: 40px;
+        } 
+        .cwhatsapp{
+            font-size: 18px;
+        }
+       
+        .cfacebook{
+            font-size: 18px;
+        }
+       
+        .cinstagram{
+            font-size: 18px;
+        }
+       
+        .ctiktok{
+            font-size: 18px;
+        }
+       
+        .cmail{
+            font-size: 18px;
+        }
+       .end_main_footer{
+        width: 94%;
+        font-size: 12px;
+       }
+ }
 /*footer*/
 footer.main_footer{
     width: 100%;
@@ -603,7 +1036,6 @@ footer.end_main_footer{
 ul li a{
     list-style: none;
 }
-
 .header_footer .column .column2 .list_column2{
     text-align: center;
 }
@@ -733,37 +1165,6 @@ ul li a{
             color: black;
             background-color: rgb(216, 13, 13);
         }
-@media(max-width:720px){
-            .main_send input{
-            border-radius: 10px;
-            margin: auto;
-            width: 250px;
-            height: 40px;
-        } 
-        .cwhatsapp{
-            font-size: 18px;
-        }
-       
-        .cfacebook{
-            font-size: 18px;
-        }
-       
-        .cinstagram{
-            font-size: 18px;
-        }
-       
-        .ctiktok{
-            font-size: 18px;
-        }
-       
-        .cmail{
-            font-size: 18px;
-        }
-       .end_main_footer{
-        width: 94%;
-        font-size: 12px;
-       }
- }
 /* button pour aller en haut du page */
 #myBtn {
     display: none;
@@ -783,12 +1184,25 @@ ul li a{
   #myBtn:hover {
     background-color: #555; 
   }
- 
+  section.pub{
+    width: 100%;
+    background-color: red;
+  }
+ .pub{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 270px;
+ }
+ .pub .img-pub{
+    width: 100%;
+    height: 270px;
+ }
 </style>
     <title>index</title>
 </head>
 <body>
-<!--Header-->
+<!-- Header -->
     <header>
         <a href="index.html"><img class="logo" src="images/img/logo_gmsshopmali.png" alt=""></a>
          <!--Barre de navigation-->
@@ -802,7 +1216,7 @@ ul li a{
         <!--Cart-Icon-->
     <i class='bx bx-shopping-bag' id="cart-icon"><i class="fa-solid fa-cart-shopping" title="panier"></i></i>
     </header>
-<!--Cart-->
+<!-- Cart -->
     <div class="cart">
     <div class="cart-title">Votre panier</div>
     <!--content-->
@@ -822,7 +1236,7 @@ ul li a{
 <!--Cart close-->
 <i class="bx bx-x" id="close-cart"><i class="fa-sharp fa-solid fa-xmark"></i></i>
 </div>
-<!-- Control buttons de produit de filter-->
+<!-- Control buttons de produit de filter -->
 <div id="myBtnContainer">
       <button class="btn active" onclick="topFunction();filterSelection('all')">Voir Tout</button>
       <button class="btn" onclick="topFunction();filterSelection('mobiles')">Mobiles & Accessoires</button>
@@ -834,12 +1248,12 @@ ul li a{
       <button class="btn" onclick="topFunction();filterSelection('femme')">Mode Femme</button>
     </div>
     <h1>Voir nos produits</h1>
-<!--Barre de Recherche-->
+<!-- Barre de Recherche -->
     <form>
         <input type="text" name="" id="search-item" placeholder="Rechercher vos produits ici ......"
         onkeyup="search()" autocomplete="off">
     </form>
-<!--JS de Recherche-->
+<!-- JS de Recherche -->
 <script>
         const search = () => {
     const searchbox = document.getElementById("search-item").value.toUpperCase();
@@ -853,14 +1267,19 @@ ul li a{
             if (textvalue.toUpperCase().indexOf(searchbox)> -1) {
                 product[i].style.display = "";
             }
-            else {
+            else{
                product[i].style.display = "none";
             }
+
         }
     }
 }
+
 </script>
-<!--Les de produits-->
+<section class="pub">
+    <img class="img-pub" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+</section>
+<!-- Les de produits -->
     <section class="shop-container">
         <div class="container" id="product-list">
         <!--content-->
@@ -955,7 +1374,7 @@ ul li a{
         </div>
     </div>
     </section>
-<!--Les story de Services-->
+<!-- Les story de Services -->
  <aside>
     <section class="story">
       <img src='images/img/livraison-a-domicile-974.jpg' title="Livraision" alt=''/>
@@ -963,11 +1382,7 @@ ul li a{
       <img src='images/img/service-client.jpg' title="Conversation" alt=''/>
     </section>
   </aside>
-<!--JS SEND-->
-<script>
-    
-</script>
-<!--JS DE PANIER-->
+<!-- JS DE PANIER -->
 <script>
 let cartIcon = document.querySelector('#cart-icon');
 let cart = document.querySelector('.cart');
@@ -1163,7 +1578,7 @@ function updatetotal(){
 
 
 </script>
-<!--JS DE FILTER-->
+<!-- JS DE FILTER -->
 <script>
     filterSelection("all")
     function filterSelection(c) {
@@ -1212,8 +1627,9 @@ function updatetotal(){
       
     }
 </script>  
-<!--Button aller haut de la page -->
+<!-- Button aller haut de la page -->
 <button onclick="topFunction()" id="myBtn" title="Aller en haut"><i class="fa-solid fa-angles-up"></i></button> 
+<!-- JS button aller haut de la page -->
  <script>
         //Get the button
         var mybutton = document.getElementById("myBtn");
@@ -1235,7 +1651,8 @@ function updatetotal(){
           document.documentElement.scrollTop = 0;
         }
 </script> 
-<!--Footer -->
+<!-- Footer -->
+ <footer>
     <footer class="main_footer"></footer>
     <footer class="header_footer">
         <div class="column">
@@ -1277,5 +1694,6 @@ function updatetotal(){
         </div>
     </footer>
     <footer class="end_main_footer">Copyright © 2022 GMSShopMali Tous droits récervés</footer>
+</footer>
 </body>
 </html>
