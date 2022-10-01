@@ -1077,6 +1077,8 @@ ul li a{
             flex-direction: column;
         }
         .main_send input{
+            text-align: center;
+            align-items: center;
             border-radius: 10px;
             margin: auto;
             width: 400px;
@@ -1138,6 +1140,8 @@ ul li a{
         /* Send Mode phone */
 @media(max-width:428px){
             .main_send input{
+                text-align: center;
+            align-items: center;
             border-radius: 10px;
             margin: auto;
             width: 100%;
@@ -1170,6 +1174,8 @@ ul li a{
  /* Send Mode phone */
 @media(max-width:375px){
             .main_send input{
+                text-align: center;
+            align-items: center;
             border-radius: 10px;
             margin: auto;
             width: 100%;
@@ -1202,6 +1208,8 @@ ul li a{
  /* Send Mode phone */
 @media(max-width:384px){
             .main_send input{
+                text-align: center;
+            align-items: center;
             border-radius: 10px;
             margin: auto;
             width: 100%;
@@ -1234,6 +1242,8 @@ ul li a{
   /* Send Mode phone */
 @media(max-width:390px){
             .main_send input{
+                text-align: center;
+            align-items: center;
             border-radius: 10px;
             margin: auto;
             width: 100%;
@@ -1266,6 +1276,8 @@ ul li a{
   /* Send Mode phone */
 @media(max-width:360px){
             .main_send input{
+                text-align: center;
+            align-items: center;
             border-radius: 10px;
             margin: auto;
             width: 100%;
@@ -1298,6 +1310,8 @@ ul li a{
   /* Send Mode phone */
 @media(max-width:310px){
             .main_send input{
+                text-align: center;
+            align-items: center;
             border-radius: 10px;
             margin: auto;
             width: 100%;
@@ -1588,7 +1602,7 @@ function ready(){
     }
     // Quantity changes
     var quantityInputs = document.getElementsByClassName("cart-quantity");
-    for (var i =0; i < quantityInputs.length; i++){
+    for (var i = 0; i < quantityInputs.length; i++){
         var input = quantityInputs[i]
         input.addEventListener('change', quantityChanged);
     }
@@ -1609,7 +1623,7 @@ function  buyButtonClickedWh(){
     var productImageSend = document.getElementById("cimg").src;
     var productTitreSend = document.getElementById("ctitle").innerText;
     var productPrixSend = document.getElementById("cprice").innerText;
-
+    
     var url = "https://wa.me/22371502426?text=" 
     + "Picture :" + productImageSend + ";---"
     + "Titre :" + productTitreSend + ";---"
@@ -1619,8 +1633,10 @@ function  buyButtonClickedWh(){
     var cartContent = document.getElementsByClassName('cart-content')[0];
     while (cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild);
+        
     }
      updatetotal();
+
 }
 //buy Button Facebook
 function  buyButtonClickedFb(){
