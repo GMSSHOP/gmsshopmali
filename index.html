@@ -1014,8 +1014,11 @@ ul li a{
     list-style: none;
 }
 .header_footer .column .column2 .list_column2 a{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     color: white;
-    font-size: 20px;
+    font-size: 35px;
     text-align: center;
     text-decoration: none;
     list-style: none;
@@ -1366,6 +1369,7 @@ ul li a{
  }
  .new{
     margin-top: -30px;
+    margin-bottom: 30px;
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -1379,28 +1383,50 @@ ul li a{
 .list-prod{
     margin-top: -10px;
     width: 100%;
-    height: 200px;
-display: flex;
-justify-content: space-around;
-overflow: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
 }
-.prod{
+.boxNew{
+    margin-top: 20px;
     justify-content: space-around;
     margin-bottom: 1px;
-width: 110px;
-height: 170px;
-background-color: #ddd;
+    width: 110px;
+    height: 200px;
+    background-color: #ddd;
 }
-.imgprod{
+.imgNew{
     width: 110px;
     height: 120px;
 }
-.titleprod{
-    text-align: center;
+.titleNew{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+
 }
-.prixprod{
+.priceNew{
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
     text-align: center;
-    color: red;
+    color:red;
+}
+h5{
+    margin-top: 2px;
+ display: flex;
+ justify-content: right;   
+ background-color: red;
+ color: white;
+ font-size: 18px;
+ border-radius: 10%;
+}
+h6{
+    margin-bottom: -10px;
+    font-size: 18px;
+    text-align: center;
 }
 </style>
     <title>index</title>
@@ -1432,7 +1458,6 @@ background-color: #ddd;
     <input type="submit" value="Commander sur whatsapp" onclick="buyButtonClickedWh()" class="cwhatsapp">
     <input type="submit" value="Commander sur Facebook" onclick="buyButtonClickedFb()" class="cfacebook">
     <input type="submit" value="Commander sur Instagram" onclick="buyButtonClickedIns()" class="cinstagram">
-    <input type="submit" value="Commander sur Tiktok" onclick="buyButtonClickedTik()" class="ctiktok">
 </div>
 
 </script>
@@ -1484,57 +1509,52 @@ background-color: #ddd;
     <img class="filterDiv pub1" src="images/camera-icon-vector-id1175387759.jpg" alt="">
 </section>
 <section class="new">
-    <h1 class="filterDiv text">Les nouveautés</h1>
-    <div class="list-prod">
-        <div class="filterDiv prod">
-            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
-            <div class="titleprod">Nom de prod1</div>
-            <div class="prixprod">###### FCFA</div>
+   <h1 class="filterDiv text">Les nouveautés</h1>
+
+    <section class="list-prod">
+
+        <div class="filterDiv product-box boxNew">
+            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
+            <h2 class="product-title titleNew">produict 1 </h2>
+            <span class="price priceNew">000.000 FCFA</span>
+            <h5>New</h5>
             <i class='fa-solid fa-cart-shopping add-cart'></i>
         </div>
 
-        <div class="filterDiv prod">
-            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
-            <div class="titleprod">Nom de prod</div>
-            <div class="prixprod">###### FCFA</div>
+        <div class="filterDiv product-box boxNew">
+            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
+            <h2 class="product-title titleNew">produict 2 </h2>
+            <span class="price priceNew">000.000 FCFA</span>
+            <h5>New</h5>
             <i class='fa-solid fa-cart-shopping add-cart'></i>
         </div>
 
-        <div class="filterDiv prod">
-            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
-            <div class="titleprod">Nom de prod</div>
-            <div class="prixprod">###### FCFA</div>
+        <div class="filterDiv product-box boxNew">
+            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
+            <h2 class="product-title titleNew">produict 3 </h2>
+            <span class="price priceNew">000.000 FCFA</span>
+            <h5>New</h5>
             <i class='fa-solid fa-cart-shopping add-cart'></i>
         </div>
 
-        <div class="filterDiv prod">
-            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
-            <div class="titleprod">Nom de prod</div>
-            <div class="prixprod">###### FCFA</div>
+        <div class="filterDiv product-box boxNew">
+            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
+            <h2 class="product-title titleNew">produict 4 </h2>
+            <span class="price priceNew">000.000 FCFA</span>
+            <h5>New</h5>
             <i class='fa-solid fa-cart-shopping add-cart'></i>
         </div>
 
-        <div class="filterDiv prod">
-            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
-            <div class="titleprod">Nom de prod</div>
-            <div class="prixprod">###### FCFA</div>
+        <div class="filterDiv product-box boxNew">
+            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
+            <h2 class="product-title titleNew">produict 5 </h2>
+            <span class="price priceNew">000.000 FCFA</span>
+            <h5>New</h5>
             <i class='fa-solid fa-cart-shopping add-cart'></i>
         </div>
 
-        <div class="filterDiv prod">
-            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
-            <div class="titleprod">Nom de prod</div>
-            <div class="prixprod">###### FCFA</div>
-            <i class='fa-solid fa-cart-shopping add-cart'></i>
-        </div>
-
-        <div class="filterDiv prod">
-            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
-            <div class="titleprod">Nom de prod</div>
-            <div class="prixprod">###### FCFA</div>
-            <i class='fa-solid fa-cart-shopping add-cart'></i>
-        </div>
-    </div>
+    </section>
+            
 </section>
 
 <section class="voir-product">
@@ -1636,9 +1656,21 @@ background-color: #ddd;
 <!-- Les story de Services -->
  <aside>
     <section class="story">
-      <img src='images/img/livraison-a-domicile-974.jpg' title="Livraision" alt=''/>
-      <img src='images/img/commande.png' title="Commande" alt=''/>
-      <img src='images/img/service-client.jpg' title="Conversation" alt=''/>
+     <h6>
+        Livraision
+        <img src='images/img/livraison-a-domicile-974.jpg' title="Livraision" alt=''/>
+     </h6> 
+
+     <h6>
+        Commande
+        <img src='images/img/commande.png' title="Commande" alt=''/>
+     </h6>
+     
+     <h6>
+        service-Client
+        <img src='images/img/service-client.jpg' title="Conversation" alt=''/>
+     </h6>
+     
     </section>
   </aside>
 <!-- JS DE PANIER -->
@@ -1729,24 +1761,6 @@ function  buyButtonClickedFb(){
 }
 //buy Button Instagram
 function  buyButtonClickedIns(){
-    var productImageSend = document.getElementById("cimg").src;
-    var productTitreSend = document.getElementById("ctitle").innerText;
-    var productPrixSend = document.getElementById("cprice").innerText;
-
-    var url = "https://www.?text=" 
-    + "Picture :" + productImageSend + ";---"
-    + "Titre :" + productTitreSend + ";---"
-    + "Prix :" + productPrixSend
-    window.open(url, '_blank').focus();
-    alert('Vous avez commandé')
-    var cartContent = document.getElementsByClassName('cart-content')[0];
-    while (cartContent.hasChildNodes()){
-        cartContent.removeChild(cartContent.firstChild);
-    }
-     updatetotal();
-}
-//buy Button Tiktok
-function  buyButtonClickedTik(){
     var productImageSend = document.getElementById("cimg").src;
     var productTitreSend = document.getElementById("ctitle").innerText;
     var productPrixSend = document.getElementById("cprice").innerText;
