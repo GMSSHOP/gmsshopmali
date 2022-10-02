@@ -237,6 +237,9 @@ nav a.tiktok:hover{
 }
 /*Barre de recherche */
 form{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
     background-color: gray;
     border-radius: 20px;
 }
@@ -270,7 +273,9 @@ section a{
     text-decoration: none;
     font-size: 10px;
 }
-h1{
+.text{
+    width: 100%;
+    background-color: black;
     font-style: inherit;
     text-align: center;
     color: rgb(244, 244, 246);
@@ -319,8 +324,6 @@ section a:hover{
 .filterDiv {
     float: left;
     margin-bottom: 25px;
-    width: 250px;
-    height: 340px;
     display: none;
 }
 .shop-container{
@@ -528,9 +531,7 @@ section a:hover{
      font-size: 16px;
  }
     .filterDiv{
-        width: 170px;
-        height: 300px;
-        margin-bottom: -12px;
+        margin-bottom: 10px;
     }
     .filter{
         width: 94%;
@@ -628,9 +629,7 @@ section a:hover{
      font-size: 16px;
  }
     .filterDiv{
-        width: 170px;
-        height: 300px;
-        margin-bottom: -12px;
+        margin-bottom: 10px;
     }
     .filter{
         width: 94%;
@@ -728,9 +727,7 @@ section a:hover{
      font-size: 16px;
  }
     .filterDiv{
-        width: 170px;
-        height: 300px;
-        margin-bottom: -12px;
+        margin-bottom: 10px;
     }
     .filter{
         width: 94%;
@@ -828,9 +825,7 @@ section a:hover{
      font-size: 16px;
  }
     .filterDiv{
-        width: 170px;
-        height: 300px;
-        margin-bottom: -12px;
+        margin-bottom: 10px;
     }
     .filter{
         width: 94%;
@@ -928,9 +923,7 @@ section a:hover{
      font-size: 16px;
  }
     .filterDiv{
-        width: 170px;
-        height: 300px;
-        margin-bottom: -12px;
+        margin-bottom: 10px;
     }
     .filter{
         width: 94%;
@@ -1360,21 +1353,55 @@ ul li a{
   #myBtn:hover {
     background-color: #555; 
   }
-  section.pub{
-    width: 100%;
-    background-color: red;
+  .pub{
+    margin-left: 5px;
+    margin-right: 5px;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
- .pub{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 270px;
+ .pub1{
+    width: 1000px;
+    height: 250px;
  }
- .pub .img-pub{
-    width: 100%;
-    height: 270px;
+ .new{
+    margin-top: -30px;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
  }
-
+.voir-product{
+    margin-bottom: -20px;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.list-prod{
+    margin-top: -10px;
+    width: 100%;
+    height: 200px;
+display: flex;
+justify-content: space-around;
+overflow: auto;
+}
+.prod{
+    justify-content: space-around;
+    margin-bottom: 1px;
+width: 110px;
+height: 170px;
+background-color: #ddd;
+}
+.imgprod{
+    width: 110px;
+    height: 120px;
+}
+.titleprod{
+    text-align: center;
+}
+.prixprod{
+    text-align: center;
+    color: red;
+}
 </style>
     <title>index</title>
 </head>
@@ -1424,7 +1451,7 @@ ul li a{
       <button class="btn" onclick="topFunction();filterSelection('homme')">Mode Homme</button>
       <button class="btn" onclick="topFunction();filterSelection('femme')">Mode Femme</button>
     </div>
-    <h1>Voir nos produits</h1>
+   
 <!-- Barre de Recherche -->
     <form>
         <input type="text" name="" id="search-item" placeholder="Rechercher vos produits ici ......"
@@ -1435,17 +1462,17 @@ ul li a{
         const search = () => {
     const searchbox = document.getElementById("search-item").value.toUpperCase();
     const storeitems = document.getElementById("product-list")
-    const product = document.querySelectorAll(".filterDiv")
+    const product = document.querySelectorAll(".sea")
     const pname = storeitems.getElementsByTagName("h2")
-    for (var i = 0; i < pname.length; i++){
-        let match = product[i].getElementsByTagName('h2')[0];
+    for (var s = 0; s < pname.length; s++){
+        let match = product[s].getElementsByTagName("h2")[0];
         if (match){
             let textvalue = match.textContent || match.innerHTML
             if (textvalue.toUpperCase().indexOf(searchbox)> -1) {
-                product[i].style.display = "";
+                product[s].style.display = "";
             }
             else{
-               product[i].style.display = "none";
+               product[s].style.display = "none";
             }
 
         }
@@ -1454,8 +1481,66 @@ ul li a{
 
 </script>
 <section class="pub">
-    <img class="img-pub" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+    <img class="filterDiv pub1" src="images/camera-icon-vector-id1175387759.jpg" alt="">
 </section>
+<section class="new">
+    <h1 class="filterDiv text">Les nouveautés</h1>
+    <div class="list-prod">
+        <div class="filterDiv prod">
+            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+            <div class="titleprod">Nom de prod1</div>
+            <div class="prixprod">###### FCFA</div>
+            <i class='fa-solid fa-cart-shopping add-cart'></i>
+        </div>
+
+        <div class="filterDiv prod">
+            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+            <div class="titleprod">Nom de prod</div>
+            <div class="prixprod">###### FCFA</div>
+            <i class='fa-solid fa-cart-shopping add-cart'></i>
+        </div>
+
+        <div class="filterDiv prod">
+            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+            <div class="titleprod">Nom de prod</div>
+            <div class="prixprod">###### FCFA</div>
+            <i class='fa-solid fa-cart-shopping add-cart'></i>
+        </div>
+
+        <div class="filterDiv prod">
+            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+            <div class="titleprod">Nom de prod</div>
+            <div class="prixprod">###### FCFA</div>
+            <i class='fa-solid fa-cart-shopping add-cart'></i>
+        </div>
+
+        <div class="filterDiv prod">
+            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+            <div class="titleprod">Nom de prod</div>
+            <div class="prixprod">###### FCFA</div>
+            <i class='fa-solid fa-cart-shopping add-cart'></i>
+        </div>
+
+        <div class="filterDiv prod">
+            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+            <div class="titleprod">Nom de prod</div>
+            <div class="prixprod">###### FCFA</div>
+            <i class='fa-solid fa-cart-shopping add-cart'></i>
+        </div>
+
+        <div class="filterDiv prod">
+            <img class="imgprod" src="images/camera-icon-vector-id1175387759.jpg" alt="">
+            <div class="titleprod">Nom de prod</div>
+            <div class="prixprod">###### FCFA</div>
+            <i class='fa-solid fa-cart-shopping add-cart'></i>
+        </div>
+    </div>
+</section>
+
+<section class="voir-product">
+    <h1 class="filterDiv text">Voir nos produits</h1>
+</section>
+
 <!-- Les de produits -->
     <section class="shop-container">
         <div class="container" id="product-list">
@@ -1463,7 +1548,7 @@ ul li a{
         <div class="shop-content" >
            
            <!--Box 1-->
-           <div class="filterDiv mobiles">
+           <div class="sea filterDiv mobiles">
             <div class="product-box">
                 <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
                 <h2 class="product-title">Nom du produict 1</h2>
@@ -1475,7 +1560,7 @@ ul li a{
         </div>
 
         <!--Box 2-->
-        <div class="filterDiv jeux">
+        <div class="sea filterDiv jeux">
             <div class="product-box">
                 <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
                 <h2 class="product-title">Nom du produict 2</h2>
@@ -1487,7 +1572,7 @@ ul li a{
         </div>
 
          <!--Box 3-->
-         <div class="filterDiv sonorisations">
+         <div class="sea filterDiv sonorisations">
             <div class="product-box">
                 <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
                 <h2 class="product-title">Nom du produict 3</h2>
@@ -1499,7 +1584,7 @@ ul li a{
         </div>
 
         <!--Box 4-->
-        <div class="filterDiv mobiles">
+        <div class="sea filterDiv mobiles">
             <div class="product-box">
                 <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
                 <h2 class="product-title">Nom du produict 4</h2>
@@ -1511,7 +1596,7 @@ ul li a{
         </div>
 
         <!--Box 5-->
-        <div class="filterDiv montres">
+        <div class="sea filterDiv montres">
             <div class="product-box">
                 <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
                 <h2 class="product-title">Nom du produict 5</h2>
@@ -1523,7 +1608,7 @@ ul li a{
         </div>
 
         <!--Box 6-->
-        <div class="filterDiv sonorisations">
+        <div class="sea filterDiv hommes">
             <div class="product-box">
                 <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
                 <h2 class="product-title">Nom du produict 6</h2>
@@ -1535,7 +1620,7 @@ ul li a{
         </div>
 
         <!--Box 7-->
-        <div class="filterDiv mobiles">
+        <div class="sea filterDiv femmes">
             <div class="product-box">
                 <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
                 <h2 class="product-title">Nom du produict 7</h2>
@@ -1545,20 +1630,6 @@ ul li a{
                 <i class='fa-solid fa-cart-shopping add-cart'></i>
             </div>
         </div>
-
-         <!--Box 8-->
-         <div class="filterDiv homme">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 8</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
-            </div>
-        </div>
-
-
         </div>
     </div>
     </section>
