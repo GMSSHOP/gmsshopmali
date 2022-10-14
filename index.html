@@ -1431,8 +1431,6 @@ h6{
     font-size: 18px;
     text-align: center;
 }
-
-
 .pub {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
@@ -1531,6 +1529,7 @@ flex-wrap: wrap;
   color: white;
   
 }
+
 </style>
     <title>GMS_SHOP_MALI</title>
 </head>
@@ -1818,7 +1817,7 @@ flex-wrap: wrap;
      </h6>
      
      <h6>
-        service-Client
+        Service-Client
         <img src='images/img/service-client.jpg' title="Conversation" alt=''/>
      </h6>
      
@@ -1982,8 +1981,8 @@ var send = cartBoxContent
 
 //Update Total
 function updatetotal(){
-    var cartContent = document.getElementsByClassName("cart-content")[0];
-    var cartBoxes = cartContent.getElementsByClassName("cart-box");
+    var cartContent = document.getElementsByClassName("")[0];
+    var cartBoxes = cartContent.getElementsByClassName("inCartItemsNum");
     var total = 0;
     for (var i = 0; i < cartBoxes.length; i++){
         var cartBox = cartBoxes[i];
