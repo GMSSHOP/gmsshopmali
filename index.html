@@ -318,6 +318,11 @@ section a:hover{
     width: 150px;
     height: 150px;
     border-radius: 20%;
+    opacity: 1;
+}
+.story img:hover{
+box-shadow: 10px 10px 10px ;
+ opacity: 0.5;
 }
 /*les de produit filter*/
 .container{
@@ -414,7 +419,6 @@ section a:hover{
      display: flex;
      justify-content: space-around;
      margin-top: 20px;
-     overflow: hidden;
    }
 /* Style the buttons */
    #myBtnContainer{
@@ -448,6 +452,7 @@ section a:hover{
    }
 /* Mode phone */
    @media(max-width:428px){
+  
     header .logo{
         width: 95%;
     }
@@ -517,7 +522,7 @@ section a:hover{
 .product-img{
     align-items: center;
      width: 190px;
-     height: 150px;
+     height: 260px;
      border-radius: 5px;
    }
    .product-img:hover{
@@ -615,7 +620,7 @@ section a:hover{
 .product-img{
     align-items: center;
      width: 170px;
-     height: 150px;
+     height: 260px;
      border-radius: 5px;
    }
    .product-img:hover{
@@ -713,7 +718,7 @@ section a:hover{
 .product-img{
     align-items: center;
      width: 175px;
-     height: 150px;
+     height: 260px;
      border-radius: 5px;
    }
    .product-img:hover{
@@ -811,7 +816,7 @@ section a:hover{
 .product-img{
     align-items: center;
      width: 175px;
-     height: 150px;
+     height: 260px;
      border-radius: 5px;
    }
    .product-img:hover{
@@ -909,7 +914,7 @@ section a:hover{
 .product-img{
     align-items: center;
      width: 165px;
-     height: 150px;
+     height: 260px;
      border-radius: 5px;
    }
    .product-img:hover{
@@ -956,7 +961,7 @@ section a:hover{
 .product-img{
     align-items: center;
      width: 290px;
-     height: 150px;
+     height: 260px;
      border-radius: 5px;
    }
    .product-img:hover{
@@ -1347,6 +1352,7 @@ ul li a{
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
+    
  }
 .voir-product{
     margin-bottom: -20px;
@@ -1361,20 +1367,21 @@ ul li a{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1rem;
 }
 .boxNew{
     margin-top: 10px;
     justify-content: space-between;
     margin-bottom: 1px;
-    width: 110px;
+    width: 130px;
     height: 210px;
     background-color: #ddd;
-   
+    
 }
 
 .imgNew{
-    width: 110px;
+    width: 130px;
     height: 120px;
 }
 .titleNew{
@@ -1522,7 +1529,7 @@ button{
 }
 .imgP{
     border-radius: 10px;
-    width: 280px;
+    width: 310px;
     height: 360px;
     padding: 2rem 1rem;
     transition: 0.5s all;
@@ -1534,6 +1541,11 @@ button{
     box-shadow: 1px 2px 10px black ;
     opacity: 0.5;
 }
+h6{
+    color: rgb(218, 212, 212);
+    font-size: 18px;
+}
+
 
 </style>
     <title>GMS_SHOP_MALI</title>
@@ -1552,8 +1564,7 @@ button{
         </nav>
         <!--Cart-Icon-->
         <div class="cart_icon">
-            <p><i class='bx bx-shopping-bag' id="cart-icon"><i class="fa-solid fa-cart-shopping" title="panier"></i></i>
-            <span class="total-price" id="cart-total">0 FCFA</span></p>
+            <i class='bx bx-shopping-bag' id="cart-icon"><i class="fa-solid fa-cart-shopping" title="panier"></i></i>
         </div>
    
     </header>
@@ -1609,7 +1620,6 @@ button{
             else{
                product[s].style.display = "none";
             }
-
         }
     }
 }
@@ -1620,11 +1630,11 @@ button{
     <div class="filterDiv slideshow-container">
 
         <div class="filterDiv mySlides fade pub1">
-          <img class="imgpub" src="images/camera-icon-vector-id1175387759.jpg" style="width:100%;" alt="">
+          <img class="imgpub" src="images/img/marque-telephone.jpg" style="width:100%;" alt="">
         </div>
         
         <div class="filterDiv mySlides fade pub1">
-          <img class="imgpub" src="images/camera-icon-vector-id1175387759.jpg" style="width:100%;" alt="">
+          <img class="imgpub" src="images/img/" style="width:100%;" alt="">
         </div>
         
         <div class="filterDiv mySlides fade pub1">
@@ -1820,19 +1830,7 @@ button{
                 <i class='fa-solid fa-cart-shopping add-cart'></i>
             </div>
         </div>
-        
- <!--Box 8-->
- <div class="sea filterDiv montres">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 8</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
-</div>
-
+ 
  <!--Box 9-->
  <div class="sea filterDiv sonorisations">
     <div class="product-box">
@@ -1917,6 +1915,19 @@ button{
     </div>
  </div>
 
+        
+ <!--Box 16-->
+ <div class="sea filterDiv montres">
+    <div class="product-box">
+        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
+        <h2 class="product-title">Nom du produict 16</h2>
+        <p><span>-00%</span></p>
+        <span class="old-price">000.000 FCFA</span>
+        <span class="price">000.000 FCFA</span>
+        <i class='fa-solid fa-cart-shopping add-cart'></i>
+    </div>
+</div>
+
 </div>
  </div>
 </section>
@@ -1950,7 +1961,7 @@ button{
 
      <h6>
         Dépannage
-        <img src='images/img/DzTechs.jpg' title="Conversation" alt=''/>
+        <img src='images/img/DzTechs.jpg' title="Dépannage" alt=''/>
      </h6>
      
     </section>
