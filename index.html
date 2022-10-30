@@ -10,7 +10,7 @@
 <style>
     /* Body */
         body{
-  background-color: rgb(93, 101, 100);
+    background-color: rgb(93, 101, 100);
 }
 /* Parametre Defaut */
 *{
@@ -301,6 +301,7 @@ section a:hover{
 }
 /*section de story*/
 .story{
+    margin-top: 10px;
     display: flex;
     justify-content: space-around;
     padding: 0%;
@@ -976,7 +977,7 @@ footer.main_footer{
 }
 footer.end_main_footer{
     width: 100%;
-    height: 15px;
+    height: 18px;
     background-color: gray;
     text-align: center;
     color: black;
@@ -986,6 +987,7 @@ footer.end_main_footer{
     background-color: black;
 }
 .header_footer .column{
+    margin-top: 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -1075,13 +1077,19 @@ ul li a{
     box-shadow: 0px 0px 10px rgb(248, 247, 246);
     color: white;
 }
-
+.column2 .lien{
+    margin-top: 50px;
+}
+.contact{
+    display: flex;
+    justify-content: start;
+}
 
 /*send*/
 .main_send{
             margin-top: 10px;
             width: 100%;
-            height: 250px;
+            height: 50px;
             display: flex;
             flex-direction: column;
         }
@@ -1104,17 +1112,6 @@ ul li a{
             background: rgb(56,101,19);
     background: linear-gradient(0deg, rgb(45, 82, 14) 0%, rgb(40, 157, 52) 100%); 
         }
-        .cfacebook{
-            font-size: 25px;
-            color: white;
-            background-color:black;
-        }
-        .cfacebook:hover{
-            transform:scale(1.1);
-            color: black;
-            background-color: rgba(24, 93, 205, 0.752) ;
-        }
-       
         /* Send Mode phone */
 @media(max-width:428px){
             .main_send input{
@@ -1129,21 +1126,6 @@ ul li a{
             font-size: 18px;
         }
        
-        .cfacebook{
-            font-size: 18px;
-        }
-       
-        .cinstagram{
-            font-size: 18px;
-        }
-       
-        .ctiktok{
-            font-size: 18px;
-        }
-       
-        .cmail{
-            font-size: 18px;
-        }
        .end_main_footer{
         width: 94%;
         font-size: 12px;
@@ -1160,22 +1142,6 @@ ul li a{
             height: 40px;
         } 
         .cwhatsapp{
-            font-size: 18px;
-        }
-       
-        .cfacebook{
-            font-size: 18px;
-        }
-       
-        .cinstagram{
-            font-size: 18px;
-        }
-       
-        .ctiktok{
-            font-size: 18px;
-        }
-       
-        .cmail{
             font-size: 18px;
         }
        .end_main_footer{
@@ -1196,22 +1162,6 @@ ul li a{
         .cwhatsapp{
             font-size: 18px;
         }
-       
-        .cfacebook{
-            font-size: 18px;
-        }
-       
-        .cinstagram{
-            font-size: 18px;
-        }
-       
-        .ctiktok{
-            font-size: 18px;
-        }
-       
-        .cmail{
-            font-size: 18px;
-        }
        .end_main_footer{
         width: 94%;
         font-size: 12px;
@@ -1228,22 +1178,6 @@ ul li a{
             height: 40px;
         } 
         .cwhatsapp{
-            font-size: 18px;
-        }
-       
-        .cfacebook{
-            font-size: 18px;
-        }
-       
-        .cinstagram{
-            font-size: 18px;
-        }
-       
-        .ctiktok{
-            font-size: 18px;
-        }
-       
-        .cmail{
             font-size: 18px;
         }
        .end_main_footer{
@@ -1264,22 +1198,6 @@ ul li a{
         .cwhatsapp{
             font-size: 18px;
         }
-       
-        .cfacebook{
-            font-size: 18px;
-        }
-       
-        .cinstagram{
-            font-size: 18px;
-        }
-       
-        .ctiktok{
-            font-size: 18px;
-        }
-       
-        .cmail{
-            font-size: 18px;
-        }
        .end_main_footer{
         width: 94%;
         font-size: 12px;
@@ -1296,22 +1214,6 @@ ul li a{
             height: 40px;
         } 
         .cwhatsapp{
-            font-size: 18px;
-        }
-       
-        .cfacebook{
-            font-size: 18px;
-        }
-       
-        .cinstagram{
-            font-size: 18px;
-        }
-       
-        .ctiktok{
-            font-size: 18px;
-        }
-       
-        .cmail{
             font-size: 18px;
         }
        .end_main_footer{
@@ -1413,10 +1315,14 @@ h6{
     font-size: 18px;
     text-align: center;
 }
-.pub {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
-.imgpub {vertical-align: middle;
+.pub {
+    box-sizing: border-box}
+body {
+    font-family: Verdana, sans-serif; margin:0}
+.mySlides {
+    display: none}
+.imgpub {
+    vertical-align: middle;
 height: 250px;
 display: flex;
 justify-content: center;
@@ -1528,6 +1434,7 @@ button{
     border: none;
 }
 .imgP{
+    margin-top: 10px;
     border-radius: 10px;
     width: 310px;
     height: 360px;
@@ -1544,6 +1451,11 @@ button{
 h6{
     color: rgb(218, 212, 212);
     font-size: 18px;
+}
+.voirplus{
+    margin-top: -65px;
+    font-size: 28px;
+    color:black;
 }
 
 
@@ -1578,7 +1490,6 @@ h6{
 <!--Button envoiyer-->
 <div class="main_send">
     <input type="submit" value="Commander sur whatsapp" onclick="buyButtonClickedWh()" class="cwhatsapp">
-    <input type="submit" value="Commander sur Facebook" onclick="buyButtonClickedFb()" class="cfacebook">
 </div>
 
 </script>
@@ -1625,6 +1536,7 @@ h6{
 }
 
 </script>
+<!--Les section de publicité-->
 <section class="pub">
 
     <div class="filterDiv slideshow-container">
@@ -1676,9 +1588,10 @@ h6{
       dots[slideIndex-1].className += " active";
     }
     </script>
+   
 <section class="new" >
    <h1 class="filterDiv textN">Les nouveautés</h1>
-
+ <!--Les section des produict nouveauté-->
     <section class="filterDiv list-prod">
 
         <div class="filterDiv product-box boxNew">
@@ -1932,15 +1845,14 @@ h6{
  </div>
 </section>
 <article class="main_option">
-          <button class="filterDiv btnP" onclick="topFunction();filterSelection('mobiles')"><img class="imgP" src="images/g2zqY6cnDLrbpT6Zbxzemc-1200-80.jpg" alt=""></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('ordinateurs')"><img class="imgP" src="images/1881027.jpg" alt=""></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('sonorisations')"><img class="imgP" src="images/374637-JBL Charge 5 Grafetti 1-40d51f-large-1609760969.jpg" alt=""></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('montres')"><img class="imgP" src="images/montre-connectee.jpg" alt=""></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('jeux')"><img class="imgP" src="images/ps5-article_image_t-1.jpg" alt=""></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('montres')"><img class="imgP" src="images/montre rolax.jpg" alt=""></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('homme')"><img class="imgP" src="images/accessoire.jpeg" alt=""></button>
+          <button class="filterDiv btnP" onclick="topFunction();filterSelection('mobiles')"><img class="imgP" src="images/g2zqY6cnDLrbpT6Zbxzemc-1200-80.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
+          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('ordinateurs')"><img class="imgP" src="images/1881027.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
+          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('sonorisations')"><img class="imgP" src="images/374637-JBL Charge 5 Grafetti 1-40d51f-large-1609760969.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
+          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('montres')"><img class="imgP" src="images/montre-connectee.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
+          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('jeux')"><img class="imgP" src="images/ps5-article_image_t-1.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
+          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('montres')"><img class="imgP" src="images/montre rolax.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
+          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('homme')"><img class="imgP" src="images/accessoire.jpeg" alt=""><div class="voirplus">VOIR PLUS</div></button>
 </article>
-
 <!-- Les story de Services -->
  <aside>
     <section class="story">
@@ -2009,18 +1921,17 @@ function ready(){
     }
     //buy Button Work
     document.getElementsByClassName('cwhatsapp')[0].addEventListener('click', buyButtonClickedWh);
-    document.getElementsByClassName('cfacebook')[0].addEventListener('click', buyButtonClickedFb);
 }
 //buy Button Whatsapp
 function  buyButtonClickedWh(){
-    var productImageSend = document.getElementById("cimg").src;
+   var productImageSend = document.getElementById("cimg").src;
     var productTitreSend = document.getElementById("ctitle").innerText;
     var productPrixSend = document.getElementById("cprice").innerText;
-    
-    var url = "https://wa.me/22371502426?text=" 
+
+    var url ="https://wa.me/22371502426?text="
     + "Picture :" + productImageSend + ";---"
     + "Titre :" + productTitreSend + ";---"
-    + "Prix :" + productPrixSend
+    + "Prix :" + productPrixSend;
     window.open(url, '_blank').focus();
     alert('Vous avez commandé')
     var cartContent = document.getElementsByClassName('cart-content')[0];
@@ -2030,24 +1941,6 @@ function  buyButtonClickedWh(){
     }
      updatetotal();
 
-}
-//buy Button Facebook
-function  buyButtonClickedFb(){
-    var productImageSend = document.getElementById("cimg").src;
-    var productTitreSend = document.getElementById("ctitle").innerText;
-    var productPrixSend = document.getElementById("cprice").innerText;
-
-    var url = "https://www.facebook.com/messages/t/100009522162760?text=" 
-    + "Picture :" + productImageSend + ";---"
-    + "Titre :" + productTitreSend + ";---"
-    + "Prix :" + productPrixSend
-    window.open(url, '_blank').focus();
-    alert('Vous avez commandé')
-    var cartContent = document.getElementsByClassName('cart-content')[0];
-    while (cartContent.hasChildNodes()){
-        cartContent.removeChild(cartContent.firstChild);
-    }
-     updatetotal();
 }
 
 //Reome Items From Cart
@@ -2221,27 +2114,29 @@ document.getElementById('item-count').textContent = total.length;
     <footer class="header_footer">
         <div class="column">
            
-            <div class="column2">
-                <div class="list_column2">
-                    <h2>TELECHARGEMENT</h2>
-                    <ul>
-                        <li><a href=""><i class="fa-brands fa-android"></i>Android</a></li>
-                        <li><a href=""><i class="fa-brands fa-apple"></i>Apple</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="column3">
                 <div class="list_column3">
                     <h2>SERVICE</h2>
                     <ul>
                         <li><h3>Du Lundi à Samedi</h3></li>
                         <li><h3>8H A 18H</h3></li>
-                        <li><h3>.......-Bamako-Mali</h3></li>
-                        <li><h3>Commande</h3></li>
-                        <li><h3>Livraision</h3></li>
+                        <li><h3>........-Bamako-Mali</h3></li>
+                        <li><h3>Imm. ........... Porte N°</h3></li>
+                        <li><h3>Sur la Route de 3e Pont Prêt de Général Soumaré</h3></li>
                     </ul>
                 </div>
             </div>
+
+            <div class="column2">
+                <div class="list_column2">
+                    <h2>TELECHARGEMENT</h2>
+                    <ul class="lien">
+                        <li><a href=""><i class="fa-brands fa-android"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-apple"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+           
             <div class="column4">
                 <div class="list_column4">
                     <h2>CONTACTS</h2>
@@ -2251,7 +2146,11 @@ document.getElementById('item-count').textContent = total.length;
                         <li><a class="whatsapp" href="https://wa.me/+223"><i class="fa-brands fa-whatsapp"></i>whatsapp</a></li>
                         <li><a class="instagram" href="https://"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
                         <li><a class="tiktok" href="https://"><i class="fa-brands fa-tiktok"></i>Tiktok</a></li>
-                       <li><h4 class="contact">Tel:+223 ######## / Tel:+233 ######## / Fix:+223 ########</h4></li>
+                       <div class="contact">
+                        <a class="contactTel" href="tel:+223">Tél:(+223) ########</a>
+                        <a class="cot" href="tel:+223">Tél:(+223) ########</a>
+                        <a class="cot" href="tel:+223">Fix:(+223) ########</a>
+                       </div>
                     </ul>
                 </div>
             </div>
