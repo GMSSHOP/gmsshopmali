@@ -1,2162 +1,321 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/889dacf975.js" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<style>
-    /* Body */
-        body{
-    background-color: rgb(93, 101, 100);
-}
-/* Parametre Defaut */
-*{
-    font-family: 'Times New Roman', Times, serif;
-    padding: 0;
-    margin: 0;
-}
-/*Cart*/
-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--bg-color);
-  box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
-
-}
-.bx-shopping-bag{
-  display: flex;
-  justify-content: right;
-}
-.nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-.product-img{
-  width: 200px;
-  height: 200px;
-}
-/*cart*/
-.cart {
-    overflow: auto;
-  position: fixed;
-  top: 150px;
-  right: -100%;
-  width: 470px;
-  height: 500px;
-  padding: 20px;
-  background-color: #ddd;
-  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-  transition: 0.3s;
-}
-.cart.active{
-  right: 0;
-}
-.cart-img{
-    align-items: center;
-  width: 470px;
-  height: 250px;
-}
-.fa-cart-shopping{
-    box-shadow: 1px 10px 10px black;
-    color: black;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    background-color: orange;
-    border-radius: 50%;
-    text-align: center;
-    align-items: center;
-}
-.fa-cart-shopping:hover{
-    color: red;
-}
-.fa-xmark{
-    width: 30px;
-    height: 30px;
-    background-color: rgb(67, 64, 64);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-size: 30px;
-}
-.fa-xmark:hover{
-    color: red;
-    transform: scale(1.1);
-}
-.fa-trash{
-    width: 30px;
-    height: 30px;
-    background-color: rgb(199, 194, 194);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-size: 20px;
-}
-.fa-trash:hover{
-    color: red;
-    transform: scale(1.1);
-}
-.cart-product-title{
-    text-align: center;
-    font-size: 28px;
-}
-.cart-price{
-    text-align: center;
-    font-size: 22px;
-}
-#close-cart{
-  position: absolute;
-  top: 1rem;
-  left: 0.8rem;
-  font-size: 2rem;
-  color: var(--text-color);
-  cursor: pointer;
-}
-.cart-title{
-    margin-bottom: 10px;
-    border-bottom: 2px solid black;
-    font-size: 30px;
-    text-align: center;
-}
-header{
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    position:-webkit-sticky;
-    position: sticky;
-    top: 0;
-}
-header .logo{
-    width: 300px;
-    height: 80px;
-    border: none;
-    display: flex;
-}
-header .logo:hover{
-    transform: none;
-}
-nav{
-    display: flex;
-    justify-content: space-around;
-    width: 300px;
-    align-items: center;
-    text-decoration: none;
-    flex-wrap: wrap;
-    font-size: 20px;
-}
-nav a{
-    padding: 0;
-    margin: auto;
-    text-align: center;
-    text-decoration: none;
-    transform: rotate(-10deg);
-}
-nav a.mail{
-    box-shadow: 1px 10px 10px black;
-    color: white;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(254, 42, 42, 0.846);
-    border-radius: 50%;
-}
-nav a.mail:hover{
-    background-color: rgb(216, 13, 13);
-}
-nav a.facebook{
-    box-shadow: 1px 10px 10px black;
-    color: white;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(66, 134, 244, 0.752);
-    border-radius: 50%;
-}
-nav a.facebook:hover{
-    background-color: rgba(24, 93, 205, 0.752) ;
-}
-nav a.whatsapp{
-    box-shadow: 1px 10px 10px black;
-    color: white;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    background: rgb(56,101,19);
-    background: linear-gradient(0deg, rgba(56,101,19,1) 0%, rgba(61,240,80,1) 100%); 
-    border-radius: 50%;
-}
-nav a.whatsapp:hover{
-    background: rgb(56,101,19);
-    background: linear-gradient(0deg, rgb(45, 82, 14) 0%, rgb(40, 157, 52) 100%); 
-}
-nav a.instagram{
-    box-shadow: 1px 10px 10px black;
-    color: white;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    border-radius: 50%;
-}
-nav a.instagram:hover{
-    box-shadow: 1px 10px 10px black;
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgb(113, 49, 156) 0%, rgb(189, 23, 23) 50%, rgb(183, 124, 42) 100%);
-}
-nav a.tiktok{
-    box-shadow: 1px 10px 10px black;
-    color: white;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    background-color: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,71,45,1) 100%);
-    border-radius: 50%;
-}
-nav a.tiktok:hover{
-    background-color: rgb(34,193,195);
-    background: linear-gradient(0deg, rgb(24, 140, 142) 0%, rgb(189, 52, 31) 100%);;
-}
-.bx-shopping-bag{
-    font-size: 20px;
-    align-items: center;
-}
-/*Barre de recherche */
-form{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 115px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 2px;
-    background-color: gray;
-    border-radius: 20px;
-}
-input{
-    color: black;
-    border:none;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    height: 20px;
-    width: 300px;
-    background-color: rgb(206, 202, 202);
-    text-align: center;
-}
-form input{
-    border: 1px solid white;
-    border: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0px;
-    margin-bottom: 15px;
-    align-items: center;
-    outline: none;
-    box-shadow: none;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 8px 0;
-}
-section a{
-    text-decoration: none;
-    font-size: 10px;
-}
-.textN{
-    width: 100%;
-    background-color: black;
-    font-style: inherit;
-    text-align: center;
-    color: rgb(244, 244, 246);
-    font-size: 30px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-section div p{
-    color: rgb(98, 95, 95);
-    font-size: 14px;
-}
-section a{
-    color: red;
-    font-size: 20px;
-}
-section a:hover{
-    color: black;
-    font-size: 25px;
-}
-/*section de story*/
-.story{
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
-    padding: 0%;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-.story img{
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 150px;
-    height: 150px;
-    border-radius: 20%;
-    opacity: 1;
-}
-.story img:hover{
-box-shadow: 10px 10px 10px ;
- opacity: 0.5;
-}
-/*les de produit filter*/
-.container{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-/*Image de product de filter */
-.filterDiv {
-    float: left;
-    margin-bottom: 25px;
-    display: none;
-}
-.shop-container{
-    display: flex;
-    justify-content: space-around;
-}
-.shop{
-    margin-top: 2rem;
-}
-.shop-content{
-    width: 100%;
-    margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    gap: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-  justify-content: space-around;
-}
-.product-box{
-    border-radius: 5px;
-    width: 270px;
-    background-color: rgb(220, 217, 217);
-}
-.product-box:hover{
-    box-shadow: 1px 1px 5px 1px;
-}
-   .product-img{
-    align-items: center;
-     margin-bottom: -5px;
-     width: 270px;
-     height: 260px;
-     border-radius: 5px;
-   }
- .product-title{
-    color: rgb(5, 0, 0);
-     font-size: 22px;
-     text-align: center;
-   }
- p{
-     border-radius: 5px;
-     padding: 0;
-     margin: auto;
-     display: flex;
-     justify-content: center;
-     text-align: center;
-     align-items: center;
-     width: 40px;
-     height: 20px;
-     background-color: red;
- }
- p span{
-     text-align: center;
-     font-size: 12px;
-     color: white;
- }
-
- .old-price{
-     color: rgb(75, 73, 73);
-    font-size: 18px; 
-    text-decoration: line-through;
- }
- .price{
-     color: black;
-     font-size: 24px;
- }
- .add-cart{
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    color: black;
-    background-color: white;
- }
- .add-cart:hover{
-    background-color: orange;
-    color: rgb(252, 251, 251);
- }
-   .show {
-     display: block;
-   }
-   .container {
-     display: flex;
-     justify-content: space-around;
-     margin-top: 20px;
-   }
-/* Style the buttons */
-   #myBtnContainer{
-    background-color: white;
-    margin-top: -5px;
-    height: 38px;
-    display: flex;
-    justify-content: flex-start;
-    overflow: scroll;
-    position:-webkit-sticky;
-    position: sticky;
-    top: 75px;
-    align-items: center;
-}
-   .btn {
-    font-size: 14px;
-     border-radius: 18px;
-     border: none;
-     outline: none;
-     padding: 5px 16px;
-     background-color: #f1f1f1;
-     cursor: pointer;
-     flex: none;
-   }
-   .btn:hover {
-     background-color: #ddd;
-   }
-   .btn.active {
-     background-color: #666;
-     color: white;
-   }
-/* Mode phone */
-   @media(max-width:428px){
-  
-    header .logo{
-        width: 95%;
-    }
-    nav a{
-        width: 94%;
-    }
-    .story img{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-}
-    .cart {
-
-  width: 250px;
-  position: fixed;
-  top: 150px;
-  right: -250%;
-  height: 500px;
-  padding: 20px;
-  background-color: #ddd;
-  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-  transition: 0.3s;
-}
-.cart.active{
-  right: 0;
-}
-.cart-img{
-    align-items: center;
-  width: 94%;
-}
-.cart-product-title{
-    text-align: center;
-    font-size: 24px;
-}
-.colse{
-    font-size: 16px;
-}
-.cart-price{
-    text-align: center;
-    font-size: 22px;
-}
-.cart-title{
-    font-size: 30px;
-    text-align: center;
-}
-.shop-container{
-    display: flex;
-    justify-content: space-around;
-}
-.shop-content{
-    width: 94%;
-    margin-bottom: 20px;
-    display: grid;
-    gap: 0.1px;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-.product-box{
-    text-align: center;
-    border-radius: 5px;
-    width: 190px;
-    background-color: rgb(180, 176, 176);
-}
-.product-img{
-    align-items: center;
-     width: 190px;
-     height: 260px;
-     border-radius: 5px;
-   }
-   .product-img:hover{
-    transform: none;
-   }
- .product-title{
-    color: rgb(5, 0, 0);
-     font-size: 16px;
-     text-align: center;
-   }
-   .old-price{
-    font-size: 14px; 
-    text-decoration: line-through;
- }
- .price{
-     color: black;
-     font-size: 16px;
- }
-    .filterDiv{
-        margin-bottom: 10px;
-    }
-    .filter{
-        width: 94%;
-        height: 560px;
-}
-}
-/* Mode phone */
-@media(max-width:375px){
-    header .logo{
-        width: 95%;
-    }
-    nav a{
-        width: 94%;
-    }
-    .story img{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-}
-    .cart {
-
-  width: 250px;
-  position: fixed;
-  top: 150px;
-  right: -250%;
-  height: 500px;
-  padding: 20px;
-  background-color: #ddd;
-  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-  transition: 0.3s;
-}
-.cart.active{
-  right: 0;
-}
-.cart-img{
-    align-items: center;
-  width: 94%;
-}
-.cart-product-title{
-    text-align: center;
-    font-size: 24px;
-}
-.colse{
-    font-size: 16px;
-}
-.cart-price{
-    text-align: center;
-    font-size: 22px;
-}
-.cart-title{
-    font-size: 30px;
-    text-align: center;
-}
-.shop-container{
-    display: flex;
-    justify-content: space-around;
-}
-.shop-content{
-    width: 94%;
-    margin-bottom: 20px;
-    display: grid;
-    gap: 0.1px;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-.product-box{
-    text-align: center;
-    border-radius: 5px;
-    width: 170px;
-    background-color: rgb(180, 176, 176);
-}
-.product-img{
-    align-items: center;
-     width: 170px;
-     height: 260px;
-     border-radius: 5px;
-   }
-   .product-img:hover{
-    transform: none;
-   }
- .product-title{
-    color: rgb(5, 0, 0);
-     font-size: 16px;
-     text-align: center;
-   }
-   .old-price{
-    font-size: 14px; 
-    text-decoration: line-through;
- }
- .price{
-     color: black;
-     font-size: 16px;
- }
-    .filterDiv{
-        margin-bottom: 10px;
-    }
-    .filter{
-        width: 94%;
-        height: 560px;
-}
-}
-/* Mode phone */
-@media(max-width:384px){
-    header .logo{
-        width: 95%;
-    }
-    nav a{
-        width: 94%;
-    }
-    .story img{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-}
-    .cart {
-
-  width: 250px;
-  position: fixed;
-  top: 150px;
-  right: -250%;
-  height: 500px;
-  padding: 20px;
-  background-color: #ddd;
-  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-  transition: 0.3s;
-}
-.cart.active{
-  right: 0;
-}
-.cart-img{
-    align-items: center;
-  width: 94%;
-}
-.cart-product-title{
-    text-align: center;
-    font-size: 24px;
-}
-.colse{
-    font-size: 16px;
-}
-.cart-price{
-    text-align: center;
-    font-size: 22px;
-}
-.cart-title{
-    font-size: 30px;
-    text-align: center;
-}
-.shop-container{
-    display: flex;
-    justify-content: space-around;
-}
-.shop-content{
-    width: 94%;
-    margin-bottom: 20px;
-    display: grid;
-    gap: 0.1px;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-.product-box{
-    text-align: center;
-    border-radius: 5px;
-    width: 175px;
-    background-color: rgb(180, 176, 176);
-}
-.product-img{
-    align-items: center;
-     width: 175px;
-     height: 260px;
-     border-radius: 5px;
-   }
-   .product-img:hover{
-    transform: none;
-   }
- .product-title{
-    color: rgb(5, 0, 0);
-     font-size: 16px;
-     text-align: center;
-   }
-   .old-price{
-    font-size: 14px; 
-    text-decoration: line-through;
- }
- .price{
-     color: black;
-     font-size: 16px;
- }
-    .filterDiv{
-        margin-bottom: 10px;
-    }
-    .filter{
-        width: 94%;
-        height: 560px;
-}
-}
-/* Mode phone */
-@media(max-width:390px){
-    header .logo{
-        width: 95%;
-    }
-    nav a{
-        width: 94%;
-    }
-    .story img{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-}
-    .cart {
-
-  width: 250px;
-  position: fixed;
-  top: 150px;
-  right: -250%;
-  height: 500px;
-  padding: 20px;
-  background-color: #ddd;
-  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-  transition: 0.3s;
-}
-.cart.active{
-  right: 0;
-}
-.cart-img{
-    align-items: center;
-  width: 94%;
-}
-.cart-product-title{
-    text-align: center;
-    font-size: 24px;
-}
-.colse{
-    font-size: 16px;
-}
-.cart-price{
-    text-align: center;
-    font-size: 22px;
-}
-.cart-title{
-    font-size: 30px;
-    text-align: center;
-}
-.shop-container{
-    display: flex;
-    justify-content: space-around;
-}
-.shop-content{
-    width: 94%;
-    margin-bottom: 20px;
-    display: grid;
-    gap: 0.1px;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-.product-box{
-    text-align: center;
-    border-radius: 5px;
-    width: 175px;
-    background-color: rgb(180, 176, 176);
-}
-.product-img{
-    align-items: center;
-     width: 175px;
-     height: 260px;
-     border-radius: 5px;
-   }
-   .product-img:hover{
-    transform: none;
-   }
- .product-title{
-    color: rgb(5, 0, 0);
-     font-size: 16px;
-     text-align: center;
-   }
-   .old-price{
-    font-size: 14px; 
-    text-decoration: line-through;
- }
- .price{
-     color: black;
-     font-size: 16px;
- }
-    .filterDiv{
-        margin-bottom: 10px;
-    }
-    .filter{
-        width: 94%;
-        height: 560px;
-}
-}
-/* mode phone */
-@media(max-width:360px){
-    header .logo{
-        width: 95%;
-    }
-    nav a{
-        width: 94%;
-    }
-    .story img{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-}
-    .cart {
-
-  width: 250px;
-  position: fixed;
-  top: 150px;
-  right: -250%;
-  height: 500px;
-  padding: 20px;
-  background-color: #ddd;
-  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-  transition: 0.3s;
-}
-.cart.active{
-  right: 0;
-}
-.cart-img{
-    align-items: center;
-  width: 94%;
-}
-.cart-product-title{
-    text-align: center;
-    font-size: 24px;
-}
-.colse{
-    font-size: 16px;
-}
-.cart-price{
-    text-align: center;
-    font-size: 22px;
-}
-.cart-title{
-    font-size: 30px;
-    text-align: center;
-}
-.shop-container{
-    display: flex;
-    justify-content: space-around;
-}
-.shop-content{
-    width: 94%;
-    margin-bottom: 20px;
-    display: grid;
-    gap: 0.1px;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-.product-box{
-    text-align: center;
-    border-radius: 5px;
-    width: 165px;
-    background-color: rgb(180, 176, 176);
-}
-.product-img{
-    align-items: center;
-     width: 165px;
-     height: 260px;
-     border-radius: 5px;
-   }
-   .product-img:hover{
-    transform: none;
-   }
- .product-title{
-    color: rgb(5, 0, 0);
-     font-size: 16px;
-     text-align: center;
-   }
-   .old-price{
-    font-size: 14px; 
-    text-decoration: line-through;
- }
- .price{
-     color: black;
-     font-size: 16px;
- }
-    .filterDiv{
-        margin-bottom: 10px;
-    }
-    .filter{
-        width: 94%;
-        height: 560px;
-}
-}
-/* Mode phone */
-@media(max-width:310px){
-.shop-content{
-    margin: auto;
-    width: 94%;
-    margin-bottom: 20px;
-    display: grid;
-    gap: 0.1px;
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center;
-}  
-.product-box{
-    text-align: center;
-    border-radius: 5px;
-    width: 290px;
-    background-color: rgb(180, 176, 176);
-}
-.product-img{
-    align-items: center;
-     width: 290px;
-     height: 260px;
-     border-radius: 5px;
-   }
-   .product-img:hover{
-    transform: none;
-   }
-}
-/*footer*/
-footer.main_footer{
-    width: 100%;
-    height: 15px;
-    background-color: rgb(199, 198, 196);
-}
-footer.end_main_footer{
-    width: 100%;
-    height: 18px;
-    background-color: gray;
-    text-align: center;
-    color: black;
-}
-.header_footer{
-    width: 100%;
-    background-color: black;
-}
-.header_footer .column{
-    margin-top: 2px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.header_footer .column .column2{
-    width: 350px;
-    height: 200px;
-    background-color: black;
-}
-.header_footer .column .column3{
-    width: 350px;
-    height: 200px;
-    background-color: black;
-}
-.header_footer .column .column4{
-    width: 350px;
-    height: 200px;
-    background-color: black;
-}
-ul li a{
-    list-style: none;
-}
-.header_footer .column .column2 .list_column2{
-    text-align: center;
-}
-.header_footer .column .column3 .list_column3{
-    text-align: center;
-}
-.header_footer .column .column4 .list_column4{
-    text-align: center;
-}
-.header_footer .column .column1 .list_column1 a{
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    list-style: none;
-}
-.header_footer .column .column2 .list_column2 a{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    font-size: 35px;
-    text-align: center;
-    text-decoration: none;
-    list-style: none;
-}
-.header_footer .column .column2 .list_column2 a:hover{
-    color: orange;
-}
-.header_footer .column .column3 .list_column3 a{
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    list-style: none;
-}
-.header_footer .column .column3 .list_column3 a:hover{
-    color: orange;
-}
-.header_footer .column .column4 .list_column4 a{
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-.header_footer .column .column4 .list_column4 h4{
-    margin-top: 10px;
-    color: rgb(252, 248, 248);
-    font-size: 13px;
-}
-.header_footer .column .column4 .list_column4 a:hover{
-    color: orange;
-}
-.header_footer .column .column3 .list_column3 h3{
-    margin-top: 10px;
-    color: white;
-    font-size: 16px;
-}
-.column h2{
-
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgb(248, 247, 246);
-    color: white;
-}
-.column2 .lien{
-    margin-top: 50px;
-}
-.contact{
-    display: flex;
-    justify-content: start;
-}
-
-/*send*/
-.main_send{
-            margin-top: 10px;
-            width: 100%;
-            height: 50px;
-            display: flex;
-            flex-direction: column;
+    <title>GMS-SHOP</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
         }
-        .main_send input{
+        body{
+
+        }
+        .container_body{
+            text-align: center;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 8fr 1fr;
+            grid-template-areas: 
+            "container_header container_nav"
+            "container_content container_content"
+            "container_footer container_footer"
+            ;
+
+        }
+        .container_header{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            grid-area: container_header;
+            background-color: rgba(245, 245, 245, 0.557);
+        }
+
+        .container_nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            grid-area: container_nav;
+            background-color: rgba(245, 245, 245, 0.557);
+        }
+        .contactNav{
+            font-size: 32px;
+        }
+        .container_content{
+            grid-area: container_content;
+            background-color: white;  
+            margin-left: 30px;
+            margin-right: 30px;            
+        }
+        .container_footer{
+            grid-area: container_footer;
+            background-color: black;
+            color: white;
+        }
+        .lesOptions{
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+            background-color: rgba(128, 128, 128, 0.334);
+        }
+        .opetion{
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            box-shadow: 2px 1px 10px ;
+            margin-top: 50px;
+            background-color: rgba(128, 128, 128, 0.362);
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        .opetion:hover{
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            opacity: 0.5;
+        }
+        .imgOption{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+        .imgOption:hover{
+            border-radius: 0;
+        }
+        .textOption{
+            color: rgba(240, 248, 255, 0.807);
+        }
+        .commantOption{
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
             text-align: center;
             align-items: center;
-            border-radius: 10px;
-            margin: auto;
-            width: 400px;
-            height: 40px;
-        }
-        .cwhatsapp{
-            font-size: 25px;
-            color: white;
-    background-color:black;
-        }
-        .cwhatsapp:hover{
-            transform:scale(1.1);
-            color: black;
-            background: rgb(56,101,19);
-    background: linear-gradient(0deg, rgb(45, 82, 14) 0%, rgb(40, 157, 52) 100%); 
-        }
-        /* Send Mode phone */
-@media(max-width:428px){
-            .main_send input{
-                text-align: center;
-            align-items: center;
-            border-radius: 10px;
-            margin: auto;
             width: 100%;
-            height: 40px;
-        } 
-        .cwhatsapp{
-            font-size: 18px;
+            height: 200px;
+            background-color: rgba(6, 59, 220, 0.605);
+        }
+        .divPresentation{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 20px;
+        }
+        .imgPresentation{
+            border: 1px solid transparent;
+        }
+        .presentation1{
+            box-shadow: 1px 1px 15px;
+        }
+        .presentation2{
+            box-shadow: 1px 1px 15px;
+        }
+        .lesAdresses{
+            margin-top: 10px;
+            width: 100%;
+            background-color: rgba(175, 173, 169, 0.141);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        a{
+            margin-top: 10px;
+            text-decoration: none;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            color: black;
+        }
+        a:hover{
+            color: red;
+        }
+        .logo{
+            font-size: 56px;
+        }
+        .logo span{
+            color: blue;
+        }
+        .adresseM{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
        
-       .end_main_footer{
-        width: 94%;
-        font-size: 12px;
-       }
- }
- /* Send Mode phone */
-@media(max-width:375px){
-            .main_send input{
-                text-align: center;
-            align-items: center;
-            border-radius: 10px;
-            margin: auto;
-            width: 100%;
-            height: 40px;
-        } 
-        .cwhatsapp{
-            font-size: 18px;
+        @media screen and (max-width:700px) {
+            .container_body{
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 6fr 1fr;
+                grid-template-areas: 
+                "container_header"
+                "container_nav"
+                "container_content"
+                "container_footer"
+                ;
+            }
+            .container_content{
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+        .imgOption{
+            width: 150px;
+            height: 150px;
+          }  
+        .opetion{
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            box-shadow: 2px 1px 10px ;
+            margin-top: 10px;
+            background-color: rgba(128, 128, 128, 0.362);
+            width: 150px;
         }
-       .end_main_footer{
-        width: 94%;
-        font-size: 12px;
-       }
- }
- /* Send Mode phone */
-@media(max-width:384px){
-            .main_send input{
-                text-align: center;
-            align-items: center;
-            border-radius: 10px;
-            margin: auto;
-            width: 100%;
-            height: 40px;
-        } 
-        .cwhatsapp{
-            font-size: 18px;
+        .adresseM{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
         }
-       .end_main_footer{
-        width: 94%;
-        font-size: 12px;
-       }
- }
-  /* Send Mode phone */
-@media(max-width:390px){
-            .main_send input{
-                text-align: center;
-            align-items: center;
-            border-radius: 10px;
-            margin: auto;
-            width: 100%;
-            height: 40px;
-        } 
-        .cwhatsapp{
-            font-size: 18px;
         }
-       .end_main_footer{
-        width: 94%;
-        font-size: 12px;
-       }
- }
-  /* Send Mode phone */
-@media(max-width:360px){
-            .main_send input{
-                text-align: center;
-            align-items: center;
-            border-radius: 10px;
-            margin: auto;
-            width: 100%;
-            height: 40px;
-        } 
-        .cwhatsapp{
-            font-size: 18px;
-        }
-       .end_main_footer{
-        width: 94%;
-        font-size: 12px;
-       }
- }
-  /* Send Mode phone */
-@media(max-width:310px){
-            .main_send input{
-                text-align: center;
-            align-items: center;
-            border-radius: 10px;
-            margin: auto;
-            width: 100%;
-            height: 40px;
-        } 
-        .cwhatsapp{
-            font-size: 18px;
-        }
-       .end_main_footer{
-        width: 94%;
-        font-size: 12px;
-       }
- }
-/* button pour aller en haut du page */
-#myBtn {
-    display: none;
-    position: fixed; 
-    bottom: 65px; 
-    right: 30px; 
-    z-index: 99; 
-    border: none; 
-    outline: none; 
-    background-color: red; 
-    color: white; 
-    cursor: pointer; 
-    padding: 15px;
-    border-radius: 10px; 
-    font-size: 18px; 
-  }
-  #myBtn:hover {
-    background-color: #555; 
-  }
-  .pub{
-    margin-left: 5px;
-    margin-right: 5px;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
- .new{
-    margin-top: -10px;
-    margin-bottom: 12px;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
- }
-.voir-product{
-    margin-bottom: -20px;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.list-prod{
-    overflow-y: hidden;
-    margin-top: -10px;
-    margin-bottom: -10px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    gap: 1rem;
-}
-.boxNew{
-    margin-top: 10px;
-    justify-content: space-between;
-    margin-bottom: 1px;
-    width: 130px;
-    height: 210px;
-    background-color: #ddd;
-    
-}
-
-.imgNew{
-    width: 130px;
-    height: 120px;
-}
-.titleNew{
-    margin-top: 5px;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-
-}
-.priceNew{
-    margin-top: 2px;
-    display: flex;
-    justify-content: center;
-    font-size: 14px;
-    text-align: center;
-    color:red;
-}
-h5{
-    margin-top: 2px;
- display: flex;
- justify-content: right;   
- background-color: red;
- color: white;
- font-size: 18px;
- border-radius: 10%;
-}
-h6{
-    margin-bottom: -10px;
-    font-size: 18px;
-    text-align: center;
-}
-.pub {
-    box-sizing: border-box}
-body {
-    font-family: Verdana, sans-serif; margin:0}
-.mySlides {
-    display: none}
-.imgpub {
-    vertical-align: middle;
-height: 250px;
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-}
-
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 100%;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-.prev{
-    left: 0;
-  border-radius: 3px 0 0 3px; 
-}
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.pub1 {
-  animation-name: fade;
-  animation-duration: 0.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-.cart_icon{
-    width: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.total-price {
-
-  font-size: 10px;
-  padding: 5px 10px;
-  color: black;
-  
-}
-.clubPub{
-    border-radius: 10px;
-    flex-wrap: wrap;
-}
-.main_option{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-button{
-    background-color: transparent;
-    border: none;
-}
-.imgP{
-    margin-top: 10px;
-    border-radius: 10px;
-    width: 310px;
-    height: 360px;
-    padding: 2rem 1rem;
-    transition: 0.5s all;
-    opacity: 1;
-    box-shadow: 0px 7px 10px (0,0,0,0.5);
-    box-sizing: border-box;
-}
-.imgP:hover{
-    box-shadow: 1px 2px 10px black ;
-    opacity: 0.5;
-}
-h6{
-    color: rgb(218, 212, 212);
-    font-size: 18px;
-}
-.voirplus{
-    margin-top: -65px;
-    font-size: 28px;
-    color:black;
-}
-
-
-</style>
-    <title>GMS_SHOP_MALI</title>
+    </style>
 </head>
 <body>
-<!-- Header -->
-    <header>
-        <a href="index.html"><img class="logo" src="images/img/logo_gmsshopmali.png" alt=""></a>
-         <!--Barre de navigation-->
-        <nav>
-            <a class="mail" href="mailto:gmsshopmali@gmail.com"><i class="fa-regular fa-at" title="mail"></i></a>
-            <a class="facebook" href="https://www.facebook.com/profile.php?id=100085678868234"><i class="fa-brands fa-facebook-f" title="facebook"></i></a>
-            <a class="whatsapp" href="https://wa.me/+223"><i class="fa-brands fa-whatsapp" title="whatsapp"></i></a>
-            <a class="instagram" href="https://www."><i class="fa-brands fa-instagram" title="instagram"></i></a>
-            <a class="tiktok" href="https://www."><i class="fa-brands fa-tiktok" title="tiktok"></i></a>
-        </nav>
-        <!--Cart-Icon-->
-        <div class="cart_icon">
-            <i class='bx bx-shopping-bag' id="cart-icon"><i class="fa-solid fa-cart-shopping" title="panier"></i></i>
-        </div>
-   
-    </header>
-<!-- Cart -->
-    <div class="cart"> 
-    <div class="cart-title">Votre panier</div>
-    <!--content-->
-  <div class="cart-content" id="content-panier">
-
-</div>
-<!--Button envoiyer-->
-<div class="main_send">
-    <input type="submit" value="Commander sur whatsapp" onclick="buyButtonClickedWh()" class="cwhatsapp">
-</div>
-
-</script>
-
-<!--Cart close-->
-<i class="bx bx-x" id="close-cart"><i class="fa-sharp fa-solid fa-xmark"></i></i>
-</div>
-<!-- Control buttons de produit de filter -->
-<div id="myBtnContainer">
-      <button class="btn active" onclick="topFunction();filterSelection('all')">Voir Tout</button>
-      <button class="btn" onclick="topFunction();filterSelection('mobiles')">Mobiles & Accessoires</button>
-      <button class="btn" onclick="topFunction();filterSelection('ordinateurs')">Ordinateurs & Accessoires</button>
-      <button class="btn" onclick="topFunction();filterSelection('sonorisations')">Sonorisations</button>
-      <button class="btn" onclick="topFunction();filterSelection('montres')">Montres & Accessoires</button>
-      <button class="btn" onclick="topFunction();filterSelection('jeux')">Jeux & Accessoires</button>
-      <button class="btn" onclick="topFunction();filterSelection('homme')">Mode Homme</button>
-      <button class="btn" onclick="topFunction();filterSelection('femme')">Mode Femme</button>
+    <div class="container_body">
+    
+    <div class="container_header">
+        <img src="img/logo gmsshopmali.png" alt="" class="logo">
     </div>
-   
-<!-- Barre de Recherche -->
-    <form>
-        <input type="text" name="" id="search-item" placeholder="Rechercher vos produits ici ......"
-        onkeyup="search()" autocomplete="off">
-    </form>
-<!-- JS de Recherche -->
-<script>
-        const search = () => {
-    const searchbox = document.getElementById("search-item").value.toUpperCase();
-    const storeitems = document.getElementById("product-list")
-    const product = document.querySelectorAll(".sea")
-    const pname = storeitems.getElementsByTagName("h2")
-    for (var s = 0; s < pname.length; s++){
-        let match = product[s].getElementsByTagName("h2")[0];
-        if (match){
-            let textvalue = match.textContent || match.innerHTML
-            if (textvalue.toUpperCase().indexOf(searchbox)> -1) {
-                product[s].style.display = "";
-            }
-            else{
-               product[s].style.display = "none";
-            }
-        }
-    }
-}
+    <div class="container_nav">
+            <a class="contactNav" href="wa.me"><i class="fa-brands fa-square-whatsapp"></i></a>
+            <a class="contactNav" href="mailto:"><i class="fa-solid fa-at"></i></a>
+            <a class="contactNav" href=""><i class="fa-brands fa-square-facebook"></i></a>
+            <a class="contactNav" href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a class="contactNav" href=""><i class="fa-brands fa-square-instagram"></i></a>
+    </div>
+    <div class="container_content">
+        <img src="IMG/camera-icon-vector-id1175387759.jpg" alt="" class="imgPub" style="width: 100%;height:400px">
 
-</script>
-<!--Les section de publicité-->
-<section class="pub">
-
-    <div class="filterDiv slideshow-container">
-
-        <div class="filterDiv mySlides fade pub1">
-          <img class="imgpub" src="images/img/marque-telephone.jpg" style="width:100%;" alt="">
+        <div class="commantOption">
+            <h2>Aucun défi n'est trop grand pour nous chez entreprise <span style="color: red; font-size:36px">GMS-SHOP</span> le meilleur service est notre plus grand souhait </h2>
         </div>
         
-        <div class="filterDiv mySlides fade pub1">
-          <img class="imgpub" src="images/img/" style="width:100%;" alt="">
-        </div>
-        
-        <div class="filterDiv mySlides fade pub1">
-          <img class="imgpub" src="images/camera-icon-vector-id1175387759.jpg" style="width:100%;" alt="">
-        </div>
-        
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-        
-        </div>
-        <br>
-</section>
-<!--JS Slider-->
-<script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-    
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-    }
-    </script>
-   
-<section class="new" >
-   <h1 class="filterDiv textN">Les nouveautés</h1>
- <!--Les section des produict nouveauté-->
-    <section class="filterDiv list-prod">
+        <section class="lesOptions">
+             <!--Options 1--> 
+             <div class="opetion">
+                <img src="img/composants electronique.png" alt="" class="imgOption" >
+                <h3 class="titletOption">Composantes Eletronique</h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-        <div class="filterDiv product-box boxNew">
-            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
-            <h2 class="product-title titleNew">produict 1 </h2>
-            <span class="price priceNew">000.000 FCFA</span>
-            <h5>Nouveau</h5>
-            <i class='fa-solid fa-cart-shopping add-cart'></i>
-        </div>
+             <!--Options 2--> 
+             <div class="opetion">
+                <img src="img/matereil sono.png" alt="" class="imgOption">
+                <h3 class="titletOption">Materiels Sonorisations</h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-        <div class="filterDiv product-box boxNew">
-            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
-            <h2 class="product-title titleNew">produict 2 </h2>
-            <span class="price priceNew">000.000 FCFA</span>
-            <h5>Nouveau</h5>
-            <i class='fa-solid fa-cart-shopping add-cart'></i>
-        </div>
+            <!--Options 3--> 
+            <div class="opetion">
+                <img src="img/informatique.png" alt="" class="imgOption">
+                <h3 class="titletOption">Materiels Imformatique</h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-        <div class="filterDiv product-box boxNew">
-            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
-            <h2 class="product-title titleNew">produict 3 </h2>
-            <span class="price priceNew">000.000 FCFA</span>
-            <h5>Nouveau</h5>
-            <i class='fa-solid fa-cart-shopping add-cart'></i>
-        </div>
+             <!--Options 4--> 
+             <div class="opetion">
+                <img src="img/robotique.jpg" alt="" class="imgOption" >
+                <h3 class="titletOption">Mteriels Robotique</h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-        <div class="filterDiv product-box boxNew">
-            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
-            <h2 class="product-title titleNew">produict 4 </h2>
-            <span class="price priceNew">000.000 FCFA</span>
-            <h5>Nouveau</h5>
-            <i class='fa-solid fa-cart-shopping add-cart'></i>
-        </div>
+             <!--Options 5--> 
+             <div class="opetion">
+                <img src="img/ivraison-à-domicile.jpg" alt="" class="imgOption">
+                <h3 class="titletOption">Livraison</h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-        <div class="filterDiv product-box boxNew">
-            <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img imgNew">
-            <h2 class="product-title titleNew">produict 5 </h2>
-            <span class="price priceNew">000.000 FCFA</span>
-            <h5>Nouveau</h5>
-            <i class='fa-solid fa-cart-shopping add-cart'></i>
-        </div>
+             <!--Options 6--> 
+             <div class="opetion">
+                <img src="img/commander-en-ligne-spiq.jpg" alt="" class="imgOption">
+                <h3 class="titletOption">Commande</h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-    </section>
-            
-</section>
+             <!--Options 7--> 
+             <div class="opetion">
+                <img src="img/Réparation-dun-bien.jpg" alt="" class="imgOption" >
+                <h3 class="titletOption">Réparation Des Appareils </h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-<section class="voir-product">
-    <h1 class="filterDiv textN">Voir nos produits</h1>
-</section>
+             <!--Options 8--> 
+             <div class="opetion">
+                <img src="img/salleconseil.png" alt="" class="imgOption">
+                <h3 class="titletOption">Installation Salle De Conférence </h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
 
-<!-- Les de produits -->
-    <section class="shop-container" id="product-list">
-        <div class="container" >
-        <!--content-->
-        <div class="shop-content" >
-           
-           <!--Box 1-->
-           <div class="sea filterDiv mobiles">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 1</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
+             <!--Options 8--> 
+             <div class="opetion">
+                <img src="img/mosquee.jpg" alt="" class="imgOption">
+                <h3 class="titletOption">Installation De Mosquée et Église</h3>
+                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+            </div>
+        </section>
+        <img src="IMG/smart-watch-time-1200x799.jpg" alt="" class="imgPub" style="width: 100%;height:400px">
+
+        <div class="divPresentation">
+            <div class="presentation1">
+                <img src="IMG/camera-icon-vector-id1175387759.jpg" width="100%" alt="" class="imgPresentation">
+                <h3 class="titlePresentation">GAOUSSOU SACKO</h3>
+                <p class="textPresentation">PDG De L'Entreprise GMS-SHOP</p>
+            </div>
+
+            <div class="presentation2">
+                <img src="IMG/camera-icon-vector-id1175387759.jpg" width="100%" alt="" class="imgPresentation">
+                <h3 class="titlePresentation">Groupe Employé</h3>
+                <p class="textPresentation">Les Equipes De GMS-SHOP</p>
             </div>
         </div>
-
-        <!--Box 2-->
-        <div class="sea filterDiv jeux">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 2</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
+           <div class="lesAdresses">
+            <div class="adresset">
+                <a href="tel:+">FIX:(+223) ########</a>
+            <a href="tel:+">FIX:(+223) ########</a>
+            <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="wa.me"><i class="fa-brands fa-square-whatsapp"></i>Whatsapp</a>
+            <a href="mailto:"><i class="fa-solid fa-at"></i>Email</a>
+            <a href=""><i class="fa-sharp fa-solid fa-globe"></i>Site web</a>
+            <a href=""><i class="fa-brands fa-square-facebook"></i>Facebook</a>
+            <a href=""><i class="fa-brands fa-tiktok"></i>Tiktok</a>
+            <a href=""><i class="fa-brands fa-square-instagram"></i>Instagram</a>
             </div>
-        </div>
-
-         <!--Box 3-->
-         <div class="sea filterDiv sonorisations">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 3</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
-            </div>
-        </div>
-
-        <!--Box 4-->
-        <div class="sea filterDiv mobiles">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 4</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
-            </div>
-        </div>
-
-        <!--Box 5-->
-        <div class="sea filterDiv montres">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 5</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
-            </div>
-        </div>
-
-         <!--Box 6-->
-         <div class="sea filterDiv mobiles">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 6</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
-            </div>
-        </div>
-
-         <!--Box 7-->
-         <div class="sea filterDiv montres">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 7</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
-            </div>
-        </div>
-
-         <!--Box 8-->
-         <div class="sea filterDiv sonorisations">
-            <div class="product-box">
-                <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-                <h2 class="product-title">Nom du produict 8</h2>
-                <p><span>-00%</span></p>
-                <span class="old-price">000.000 FCFA</span>
-                <span class="price">000.000 FCFA</span>
-                <i class='fa-solid fa-cart-shopping add-cart'></i>
-            </div>
-        </div>
- 
- <!--Box 9-->
- <div class="sea filterDiv sonorisations">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 9</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
- </div>
-
- <!--Box 10-->
- <div class="sea filterDiv jeux">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 10</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
- </div>
-
- <!--Box 11-->
- <div class="sea filterDiv hommes">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 11</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
- </div>
-
- <!--Box 12-->
- <div class="sea filterDiv femmes">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 12</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
- </div>
-
- <!--Box 13-->
- <div class="sea filterDiv sonorisations">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 13</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
- </div>
-
- <!--Box 14-->
- <div class="sea filterDiv montres">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 14</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
- </div>
-
- <!--Box 15-->
- <div class="sea filterDiv ordinateurs">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 15</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
- </div>
-
-        
- <!--Box 16-->
- <div class="sea filterDiv montres">
-    <div class="product-box">
-        <img src="images/camera-icon-vector-id1175387759.jpg" alt="" class="product-img">
-        <h2 class="product-title">Nom du produict 16</h2>
-        <p><span>-00%</span></p>
-        <span class="old-price">000.000 FCFA</span>
-        <span class="price">000.000 FCFA</span>
-        <i class='fa-solid fa-cart-shopping add-cart'></i>
-    </div>
-</div>
-
-</div>
- </div>
-</section>
-<article class="main_option">
-          <button class="filterDiv btnP" onclick="topFunction();filterSelection('mobiles')"><img class="imgP" src="images/g2zqY6cnDLrbpT6Zbxzemc-1200-80.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('ordinateurs')"><img class="imgP" src="images/1881027.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('sonorisations')"><img class="imgP" src="images/374637-JBL Charge 5 Grafetti 1-40d51f-large-1609760969.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('montres')"><img class="imgP" src="images/montre-connectee.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('jeux')"><img class="imgP" src="images/ps5-article_image_t-1.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('montres')"><img class="imgP" src="images/montre rolax.jpg" alt=""><div class="voirplus">VOIR PLUS</div></button>
-          <button class="filterDiv btnP" id="btnP" onclick="topFunction();filterSelection('homme')"><img class="imgP" src="images/accessoire.jpeg" alt=""><div class="voirplus">VOIR PLUS</div></button>
-</article>
-<!-- Les story de Services -->
- <aside>
-    <section class="story">
-     <h6>
-        Livraision
-        <img src='images/img/livraison-a-domicile-974.jpg' title="Livraision" alt=''/>
-     </h6> 
-
-     <h6>
-        Commande
-        <img src='images/img/commande.png' title="Commande" alt=''/>
-     </h6>
-     
-     <h6>
-        Service-Client
-        <img src='images/img/service-client.jpg' title="Conversation" alt=''/>
-     </h6>
-
-     <h6>
-        Dépannage
-        <img src='images/img/DzTechs.jpg' title="Dépannage" alt=''/>
-     </h6>
-     
-    </section>
-  </aside>
-<!-- JS DE PANIER -->
-<script>
-let cartIcon = document.querySelector('#cart-icon');
-let cart = document.querySelector('.cart');
-let closeCart = document.querySelector('#close-cart');
-
-//Open Cart
-cartIcon.onclick = () =>{
-    cart.classList.add("active");
-}
-// Close cart
-closeCart.onclick = () =>{
-    cart.classList.remove("active");
-}
-//Cart Working js
-if (document.readyState == "loading") {
-    document.addEventListener("DOMContentLoaded", ready);
-}else{
-    ready();
-}
-//Making function
-function ready(){
-    //Reomve Items From Cart
-    var reomveCartButtons = document.getElementsByClassName("cart-remove");
-    console.log(reomveCartButtons)
-    for (var i =0; i < reomveCartButtons.length; i++){
-        var button = reomveCartButtons[i]
-        button.addEventListener('click', removeCartItem)
-    }
-    // Quantity changes
-    var quantityInputs = document.getElementsByClassName("cart-quantity");
-    for (var i = 0; i < quantityInputs.length; i++){
-        var input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged);
-    }
-    //add to Cart
-    var addCart = document.getElementsByClassName('add-cart');
-    for (var i =0; i < addCart.length; i++){
-        var button = addCart[i];
-        button.addEventListener("click", addCartClicked);
-    }
-    //buy Button Work
-    document.getElementsByClassName('cwhatsapp')[0].addEventListener('click', buyButtonClickedWh);
-}
-//buy Button Whatsapp
-function  buyButtonClickedWh(){
-   var productImageSend = document.getElementById("cimg").src;
-    var productTitreSend = document.getElementById("ctitle").innerText;
-    var productPrixSend = document.getElementById("cprice").innerText;
-
-    var url ="https://wa.me/22371502426?text="
-    + "Picture :" + productImageSend + ";---"
-    + "Titre :" + productTitreSend + ";---"
-    + "Prix :" + productPrixSend;
-    window.open(url, '_blank').focus();
-    alert('Vous avez commandé')
-    var cartContent = document.getElementsByClassName('cart-content')[0];
-    while (cartContent.hasChildNodes()){
-        cartContent.removeChild(cartContent.firstChild);
-        
-    }
-     updatetotal();
-
-}
-
-//Reome Items From Cart
-function removeCartItem(event) {
-    var buttonClicked = event.target
-    buttonClicked.parentElement.remove()
-    updatetotal();
-}
-//Quantity Changes
-function quantityChanged(event) {
-    var input = event.target;
-    if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1;
-    }
-    updatetotal();
-}
-//Add to Cart
-function addCartClicked(event){
-    var button = event.target
-    var shopProducts = button.parentElement
-    var title = shopProducts.getElementsByClassName("product-title")[0].innerText;
-    var price = shopProducts.getElementsByClassName("price")[0].innerText;
-    var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
-    addProductToCart(title, price, productImg);
-    updatetotal();
-    
-}
-function addProductToCart(title, price, productImg){
-   var cartShopBox = document.createElement("div");
-    cartShopBox.classList.add("cart-box");
-   var cartItems = document.getElementsByClassName("cart-content")[0];
-   var cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
-   for (var i = 0; i < cartItemsNames.length; i++) {
-    if (cartItemsNames [i].innerHTML == title) {
-        alert("cet produict existe déjà dans votre panier");
-        return;
-    }
-}
-
-var cartBoxContent =`  
-            <img src="${productImg}" alt="" class="cart-img" id="cimg">
-            <div class="detail-box">
-            <div class="cart-product-title" id="ctitle">${title}</div>
-            <div class="cart-price" id="cprice">${price}</div>
-            </div>
-            <!--remove Cart-->
-            <i class="fa-solid fa-trash cart-remove"></i>
-            `
-      
-cartShopBox.innerHTML = cartBoxContent
-cartItems.append(cartShopBox)
-cartShopBox.getElementsByClassName("cart-remove")[0].addEventListener('click', removeCartItem);
-cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change", quantityChanged);
-var send = cartBoxContent
-
-//Update Total
-function updatetotal(){
-    var cartContent = document.getElementsByClassName("cart")[0];
-    var cartBoxes = cartContent.getElementsByClassName("cart_icon");
-    var total = 0;
-    for (var i = 0; i < cartBoxes.length; i++){
-        var cartBox = cartBoxes[i];
-        var priceElement = cartBox.getElementsByClassName("cart-price")[0];
-        var price = parseFloat(priceElement.innerText.replace("", "FCFA"));
-        var quantity = quantityElement.value;
-        total = total + price;
-    }
-        //if price cintain sime cents 
-        document.getElementsByClassName(".cart-total")[0].innerText = total + "FCFA";
-    }
-    
-}
-// show totals
-function showTotals(){
-
-const total = [];
-const items = document.querySelectorAll('.cart-item-price');
-items.forEach(function(item){
-    total.push(parseFloat(item.textContent));
-})
-
-const totalMoney = total.reduce(function(total, item){
-    total += item;
-    return total;
-},0);
-
-const finalMoney = totalMoney.toFixed(2);
-
-document.getElementById('cart-total').textContent = finalMoney;
-document.querySelector('.total-pricel').textContent = finalMoney;
-document.getElementById('item-count').textContent = total.length;
-}
-
-</script>
-<!-- JS DE FILTER -->
-<script>
-    filterSelection("all")
-    function filterSelection(c) {
-      var x, i;
-      x = document.getElementsByClassName("filterDiv");
-      if (c == "all") c = " ";
-      for (i = 0; i < x.length; i++) {
-        removeClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-      }
-    }
-    
-    function addClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1){
-          element.className += " " + arr2[i];
-        }
-      }
-    }
-    
-    function removeClass(element, name){
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++){
-        while (arr1.indexOf(arr2[i]) > -1){
-          arr1.splice(arr1.indexOf(arr2[i]), 1);     
-        }
-      }
-      element.className = arr1.join(" ");
-    }
-    
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btn");
-    
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function(){
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", " ");
-        this.className += " active";
-      });
-      
-    }
-</script>  
-<!-- Button aller haut de la page -->
-<button onclick="topFunction()" id="myBtn" title="Aller en haut"><i class="fa-solid fa-angles-up"></i></button> 
-<!-- JS button aller haut de la page -->
- <script>
-        //Get the button
-        var mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-</script> 
-<!-- Footer -->
- <footer>
-    <footer class="main_footer"></footer>
-    <footer class="header_footer">
-        <div class="column">
-           
-            <div class="column3">
-                <div class="list_column3">
-                    <h2>SERVICE</h2>
-                    <ul>
-                        <li><h3>Du Lundi à Samedi</h3></li>
-                        <li><h3>8H A 18H</h3></li>
-                        <li><h3>........-Bamako-Mali</h3></li>
-                        <li><h3>Imm. ........... Porte N°</h3></li>
-                        <li><h3>Sur la Route de 3e Pont Prêt de Général Soumaré</h3></li>
-                    </ul>
+            <div class="adresseM">
+                <div class="b1" style="font-size: 24px;">
+                    SACKO ELECTRONIQUE<i class="fa-solid fa-location-dot"></i>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="300" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=12.644612,-7.994831&t=k&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:100%;}</style><a href="https://www.embedgooglemap.net">map html code</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:100%;}</style></div></div>
+                </div>
+                <div class="b2" style="font-size: 24px;">
+                    SACKO ELECTRO-SONO<i class="fa-solid fa-location-dot"></i>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="300" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=12.642995,-7.995269&t=k&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:100%;}</style><a href="https://www.embedgooglemap.net">map html code</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:100%;}</style></div></div>
                 </div>
             </div>
-
-            <div class="column2">
-                <div class="list_column2">
-                    <h2>TELECHARGEMENT</h2>
-                    <ul class="lien">
-                        <li><a href=""><i class="fa-brands fa-android"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-apple"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-           
-            <div class="column4">
-                <div class="list_column4">
-                    <h2>CONTACTS</h2>
-                    <ul>
-                        <li><a href="mailto:"><i class="fa-regular fa-at"></i>E-mail</a></li>
-                        <li> <a class="facebook" href="https://"><i class="fa-brands fa-facebook-f"></i>Facebook</a></li>
-                        <li><a class="whatsapp" href="https://wa.me/+223"><i class="fa-brands fa-whatsapp"></i>whatsapp</a></li>
-                        <li><a class="instagram" href="https://"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
-                        <li><a class="tiktok" href="https://"><i class="fa-brands fa-tiktok"></i>Tiktok</a></li>
-                       <div class="contact">
-                        <a class="contactTel" href="tel:+223">Tél:(+223) ########</a>
-                        <a class="cot" href="tel:+223">Tél:(+223) ########</a>
-                        <a class="cot" href="tel:+223">Fix:(+223) ########</a>
-                       </div>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <footer class="end_main_footer">Copyright © 2022 GMSShopMali Tous droits récervés</footer>
-</footer>
+        
+           </div>
+    </div>
+    <div class="container_footer">
+        footer
+    </div>
+</div>
 </body>
 </html>
