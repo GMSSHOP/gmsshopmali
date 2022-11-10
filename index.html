@@ -44,9 +44,9 @@
             grid-area: container_nav;
             background-color: rgba(245, 245, 245, 0.557);
         }
-        .contactNav{
+        /*.contactNav{
             font-size: 32px;
-        }
+        }*/
         .container_content{
             grid-area: container_content;
             background-color: white;  
@@ -89,10 +89,10 @@
         .imgOption:hover{
             border-radius: 0;
         }
-        .textOption{
-            color: rgba(240, 248, 255, 0.807);
-        }
+       
+        
         .commantOption{
+            margin-bottom: 10px;
             border-radius: 10px;
             display: flex;
             justify-content: center;
@@ -143,11 +143,88 @@
             color: blue;
         }
         .adresseM{
+            margin-top: 10px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
        
+        .container_nav a{
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+}
+.container_nav a.mail{
+    box-shadow: 1px 10px 10px black;
+    color: black;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(254, 42, 42, 0.846);
+    border-radius: 50%;
+}
+.container_nav a.mail:hover{
+    background-color: rgb(216, 13, 13);
+}
+.container_nav a.facebook{
+    box-shadow: 1px 10px 10px black;
+    color: black;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(66, 134, 244, 0.752);
+    border-radius: 50%;
+}
+.container_nav a.facebook:hover{
+    background-color: rgba(24, 93, 205, 0.752) ;
+}
+.container_nav a.whatsapp{
+    box-shadow: 1px 10px 10px black;
+    color: black;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    background: rgb(56,101,19);
+    background: linear-gradient(0deg, rgba(56,101,19,1) 0%, rgba(61,240,80,1) 100%); 
+    border-radius: 50%;
+}
+.container_nav a.whatsapp:hover{
+    background: rgb(56,101,19);
+    background: linear-gradient(0deg, rgb(45, 82, 14) 0%, rgb(40, 157, 52) 100%); 
+}
+.container_nav a.instagram{
+    box-shadow: 1px 10px 10px black;
+    color: black;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    border-radius: 50%;
+}
+.container_nav a.instagram:hover{
+    box-shadow: 1px 10px 10px black;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgb(113, 49, 156) 0%, rgb(189, 23, 23) 50%, rgb(183, 124, 42) 100%);
+}
+.container_nav a.tiktok{
+    box-shadow: 1px 10px 10px black;
+    color: black;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,71,45,1) 100%);
+    border-radius: 50%;
+}
+.container_nav a.tiktok:hover{
+    background-color: rgb(34,193,195);
+    background: linear-gradient(0deg, rgb(24, 140, 142) 0%, rgb(189, 52, 31) 100%);;
+}
+
+
+
         @media screen and (max-width:700px) {
             .container_body{
                 grid-template-columns: 1fr;
@@ -190,17 +267,17 @@
         <img src="images/logo gmsshopmali.png" alt="" class="logo">
     </div>
     <div class="container_nav">
-            <a class="contactNav" href="wa.me"><i class="fa-brands fa-square-whatsapp"></i></a>
-            <a class="contactNav" href="mailto:"><i class="fa-solid fa-at"></i></a>
-            <a class="contactNav" href=""><i class="fa-brands fa-square-facebook"></i></a>
-            <a class="contactNav" href=""><i class="fa-brands fa-tiktok"></i></a>
-            <a class="contactNav" href=""><i class="fa-brands fa-square-instagram"></i></a>
+            <a class="whatsapp" href="wa.me"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="mail" href="mailto:"><i class="fa-thin fa-at"></i></a>
+            <a class="facebook" href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="tiktok" href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a class="instagram" href=""><i class="fa-brands fa-instagram"></i></a>
     </div>
     <div class="container_content">
-        <img src="images/circuit-board-g5dea828e0_1280.png" alt="" class="imgPub" style="width: 100%;height:400px">
+        <img src="images/audio-ge23e59774_1920.jpg" alt="" class="imgPub" style="width: 100%;height:400px">
 
         <div class="commantOption">
-            <h2>Aucun défi n'est trop grand pour nous chez entreprise <span style="color: red; font-size:36px">GMS-SHOP</span> le meilleur service est notre plus grand souhait </h2>
+            <h2>Aucun défi n'est trop grand pour nous chez entreprise <span style="color: red; font-size:32px">GMS-SHOP</span> le meilleur service est notre plus grand souhait </h2>
         </div>
         
         <section class="lesOptions">
@@ -208,64 +285,50 @@
              <div class="opetion">
                 <img src="images/composants electronique.png" alt="" class="imgOption" >
                 <h3 class="titletOption">Composantes Eletronique</h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
             </div>
 
              <!--Options 2--> 
              <div class="opetion">
                 <img src="images/matereil sono.png" alt="" class="imgOption">
                 <h3 class="titletOption">Materiels Sonorisations</h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
             </div>
 
             <!--Options 3--> 
             <div class="opetion">
                 <img src="images/informatique.png" alt="" class="imgOption">
-                <h3 class="titletOption">Materiels Imformatique</h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+                <h3 class="titletOption">Materiels Informatique</h3>
             </div>
 
              <!--Options 4--> 
              <div class="opetion">
                 <img src="images/robotique.jpg" alt="" class="imgOption" >
                 <h3 class="titletOption">Mteriels Robotique</h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
             </div>
 
              <!--Options 5--> 
              <div class="opetion">
                 <img src="images/Livraison.png" alt="" class="imgOption">
                 <h3 class="titletOption">Livraison</h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
             </div>
 
              <!--Options 6--> 
              <div class="opetion">
                 <img src="images/commander-en-ligne-spiq.jpg" alt="" class="imgOption">
-                <h3 class="titletOption">Commande</h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+                <h3 class="titletOption">Commander</h3>
             </div>
 
              <!--Options 7--> 
              <div class="opetion">
                 <img src="images/reparation.png" alt="" class="imgOption" >
                 <h3 class="titletOption">Réparation Des Appareils </h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
             </div>
 
              <!--Options 8--> 
              <div class="opetion">
-                <img src="images/salleconseil.png" alt="" class="imgOption">
-                <h3 class="titletOption">Installation Salle De Conférence </h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
+                <img src="images/instM-E-C.png" alt="" class="imgOption">
+                <h3 class="titletOption">Installation Salle De Conférence Mosquée et Église</h3>
             </div>
 
-             <!--Options 8--> 
-             <div class="opetion">
-                <img src="images/mosquee.jpg" alt="" class="imgOption">
-                <h3 class="titletOption">Installation De Mosquée et Église</h3>
-                <h4 class="textOption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, ipsam.</h4>
-            </div>
         </section>
         <img src="images/smart-watch-time-1200x799.jpg" alt="" class="imgPub" style="width: 100%;height:400px">
 
@@ -284,15 +347,16 @@
         </div>
            <div class="lesAdresses">
             <div class="adresset">
-                <a href="tel:+">FIX:(+223) ########</a>
-            <a href="tel:+">FIX:(+223) ########</a>
+            <a href="tel:+">SACKO ELECTRONIC FIX:(+223) 20 21 58 77</a>
             <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
             <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
             <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
             <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <a href="tel:+">SACKO ELECTRO SONO FIX:(+223) 20 21 05 14</a>
             <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
             <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
             <a href="tel:+"><i class="fa-sharp fa-solid fa-phone"></i>Nom:...............TEL:(+223) ########</a>
+            <h2>RÉSEAUX SOCIAUX</h2>
             <a href="wa.me"><i class="fa-brands fa-square-whatsapp"></i>Whatsapp</a>
             <a href="mailto:"><i class="fa-solid fa-at"></i>Email</a>
             <a href=""><i class="fa-sharp fa-solid fa-globe"></i>Site web</a>
